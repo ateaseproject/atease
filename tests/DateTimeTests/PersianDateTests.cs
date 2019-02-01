@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using Paran.Framework.Extenstions;
-using Paran.Framework.Resources;
+using Achehre.Framework.Extenstions;
+using Achehre.Framework.Resources;
 using Xunit;
 
 namespace DateTimeTests
