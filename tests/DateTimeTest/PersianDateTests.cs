@@ -4,7 +4,7 @@ using Achehre.Framework.Extenstions;
 using Achehre.Framework.Resources;
 using Xunit;
 
-namespace DateTimeTests
+namespace DateTimeTest
 {
     public class PersianDateTests
     {

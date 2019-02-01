@@ -7,9 +7,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{43A8B8E3-C78
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{3B74CAC2-748B-419F-A115-36A03C6499B3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DateTimeTests", "tests\DateTimeTests\DateTimeTests.csproj", "{79D88821-1E8B-403C-BFA3-80A8D31FC43A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DateTimeTest", "tests\DateTimeTest\DateTimeTest.csproj", "{79D88821-1E8B-403C-BFA3-80A8D31FC43A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Achehre.Framework", "src\Achehre.Framework\Achehre.Framework.csproj", "{5C25E2BA-8A8F-4CB8-912A-DA69728044DE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Achehre.Framework", "src\Achehre.Framework\Achehre.Framework.csproj", "{5C25E2BA-8A8F-4CB8-912A-DA69728044DE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
