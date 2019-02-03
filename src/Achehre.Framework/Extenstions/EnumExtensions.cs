@@ -103,6 +103,12 @@ namespace Achehre.Framework.Extenstions
 
             return descriptionAttributes.Length > 0 ? descriptionAttributes[0].Name : value.ToString();
         }
+        
+        public static IEnumerable<KeyValuePair<int, string>> ToKeyValueList<T>() where T : struct
+        {
+            return Enum.GetValues(typeof(T)).Cast<Enum>()
+                .Select(e => new KeyValuePair<int, string>(Convert.ToInt32(e), GetDisplayName(e))).ToList();
+        }
 
         private static string lookupResource(Type resourceManagerProvider, string resourceKey)
         {
