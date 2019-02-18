@@ -68,4 +68,21 @@ namespace Achehre.Framework
             return new OperationResult(new []{error});
         }
     }
+
+    public class OperationResult<T> : OperationResult
+    {
+        protected OperationResult(bool success, T data) : base(success)
+        {
+            Data = data;
+        }
+        public T Data { get; set; }
+
+        public static OperationResult<T> Succeed(T data)
+        {
+            var operationResult = new OperationResult<T>(true, data);
+            return operationResult;
+        }
+    }
+
+
 }
