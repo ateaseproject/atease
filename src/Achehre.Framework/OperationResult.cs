@@ -63,18 +63,36 @@ namespace Achehre.Framework
         {
             return new OperationResult(errors);
         }
+
         public static OperationResult Failed(string error)
         {
-            return new OperationResult(new []{error});
+            return new OperationResult(error);
         }
     }
 
     public class OperationResult<T> : OperationResult
     {
+        /// <summary>
+        ///     Failure constructor that takes error messages
+        /// </summary>
+        /// <param name="errors"></param>
+        public OperationResult(params string[] errors) : base(errors)
+        {
+        }
+
+        /// <summary>
+        ///     Failure constructor that takes error messages
+        /// </summary>
+        /// <param name="errors"></param>
+        public OperationResult(IEnumerable<string> errors) : base(errors)
+        {
+        }
+
         protected OperationResult(bool success, T data) : base(success)
         {
             Data = data;
         }
+
         public T Data { get; set; }
 
         public static OperationResult<T> Succeed(T data)
@@ -82,7 +100,20 @@ namespace Achehre.Framework
             var operationResult = new OperationResult<T>(true, data);
             return operationResult;
         }
+
+        /// <summary>
+        ///     Failed helper method
+        /// </summary>
+        /// <param name="errors"></param>
+        /// <returns></returns>
+        public new static OperationResult<T> Failed(params string[] errors)
+        {
+            return new OperationResult<T>(errors);
+        }
+
+        public new static OperationResult<T> Failed(string error)
+        {
+            return new OperationResult<T>(error);
+        }
     }
-
-
 }
