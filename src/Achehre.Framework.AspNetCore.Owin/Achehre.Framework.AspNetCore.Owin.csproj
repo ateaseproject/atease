@@ -5,7 +5,7 @@
     <Authors>Ahmad Chehreghani</Authors>
     <PackageLicenseUrl>https://github.com/AChehre/Achehre.Framework</PackageLicenseUrl>
     <RepositoryUrl>https://github.com/AChehre/Achehre.Framework</RepositoryUrl>
-    <Version>1.0.4</Version>
+    <Version>1.0.5</Version>
   </PropertyGroup>
 
   <ItemGroup>
