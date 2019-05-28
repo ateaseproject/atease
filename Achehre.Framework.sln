@@ -15,8 +15,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Achehre.Framework.AspNetCor
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Achehre.Framework.AspNetCore.ApiExceptions", "src\Achehre.Framework.Core.ApiExceptions\Achehre.Framework.AspNetCore.ApiExceptions.csproj", "{E2444248-9711-400E-A858-4B4851D24E4D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Achehre.Framework.HangFire.Console.LogExtension", "src\Achehre.Framework.HangFire.Console.LogExtension\Achehre.Framework.HangFire.Console.LogExtension.csproj", "{0F1F695F-AD3F-42CE-B6F6-8D58B222717E}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,10 +37,6 @@ Global
 		{E2444248-9711-400E-A858-4B4851D24E4D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E2444248-9711-400E-A858-4B4851D24E4D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E2444248-9711-400E-A858-4B4851D24E4D}.Release|Any CPU.Build.0 = Release|Any CPU
-		{0F1F695F-AD3F-42CE-B6F6-8D58B222717E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{0F1F695F-AD3F-42CE-B6F6-8D58B222717E}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{0F1F695F-AD3F-42CE-B6F6-8D58B222717E}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{0F1F695F-AD3F-42CE-B6F6-8D58B222717E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -52,7 +46,6 @@ Global
 		{5C25E2BA-8A8F-4CB8-912A-DA69728044DE} = {43A8B8E3-C780-4D04-8D4F-BF73C11C8716}
 		{338F08E0-68E4-4BAF-BD3D-9281A10823DC} = {43A8B8E3-C780-4D04-8D4F-BF73C11C8716}
 		{E2444248-9711-400E-A858-4B4851D24E4D} = {43A8B8E3-C780-4D04-8D4F-BF73C11C8716}
-		{0F1F695F-AD3F-42CE-B6F6-8D58B222717E} = {43A8B8E3-C780-4D04-8D4F-BF73C11C8716}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {0D699927-0CE5-4428-AC21-F1C80B23D6AA}
