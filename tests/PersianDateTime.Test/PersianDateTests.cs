@@ -4,7 +4,7 @@ using Achehre.Framework.Extenstions;
 using Achehre.Framework.Resources;
 using Xunit;
 
-namespace DateTimeTest
+namespace PersianDateTime.Test
 {
     public class PersianDateTests
     {
@@ -26,7 +26,7 @@ namespace DateTimeTest
         [Theory]
         [MemberData(nameof(Data))]
         public void ToPersianDateTimeExtension_DateTimeFormat_PersianDateValue(DateTime time, string format,
-            string expectedValue)
+                                                                               string expectedValue)
         {
             var persianDate = time.ToPersianDateTime(format);
             Assert.Equal(expectedValue, persianDate);

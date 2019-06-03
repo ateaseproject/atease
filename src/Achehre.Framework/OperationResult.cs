@@ -9,7 +9,7 @@ namespace Achehre.Framework
         ///     Failure constructor that takes error messages
         /// </summary>
         /// <param name="errors"></param>
-        public OperationResult(params string[] errors) : this((IEnumerable<string>) errors)
+        public OperationResult(params string[] errors) : this((IEnumerable<string>)errors)
         {
         }
 
@@ -21,7 +21,7 @@ namespace Achehre.Framework
         {
             if (errors == null)
             {
-                errors = new[] {ErrorMessageResource.ArgumentNullError};
+                errors = new[] { ErrorMessageResource.ArgumentNullError };
             }
 
             Succeeded = false;
@@ -49,16 +49,20 @@ namespace Achehre.Framework
         public IEnumerable<string> Errors { get; }
 
         /// <summary>
-        ///     Static success result
+        ///  Static success result
         /// </summary>
-        /// <returns></returns>
-        public static OperationResult Success { get; } = new OperationResult(true);
+        /// <returns>Succeed OperationResult</returns>
+        public static OperationResult Succeed()
+        {
+            return new OperationResult(true);
+        }
+
 
         /// <summary>
         ///     Failed helper method
         /// </summary>
         /// <param name="errors"></param>
-        /// <returns></returns>
+        /// <returns>OperationResult with error</returns>
         public static OperationResult Failed(params string[] errors)
         {
             return new OperationResult(errors);
@@ -70,7 +74,7 @@ namespace Achehre.Framework
         }
     }
 
-    public class OperationResult<T> : OperationResult
+    public class OperationResult<TData> : OperationResult 
     {
         /// <summary>
         ///     Failure constructor that takes error messages
@@ -88,16 +92,22 @@ namespace Achehre.Framework
         {
         }
 
-        protected OperationResult(bool success, T data) : base(success)
+        protected OperationResult(bool success, TData data) : base(success)
+        {
+            WithData(data);
+        }
+
+        public TData Data { get; private set; }
+
+
+        public void WithData(TData data)
         {
             Data = data;
         }
 
-        public T Data { get; set; }
-
-        public static OperationResult<T> Succeed(T data)
+        public static OperationResult<TData> Succeed(TData data)
         {
-            var operationResult = new OperationResult<T>(true, data);
+            var operationResult = new OperationResult<TData>(true, data);
             return operationResult;
         }
 
@@ -106,14 +116,15 @@ namespace Achehre.Framework
         /// </summary>
         /// <param name="errors"></param>
         /// <returns></returns>
-        public new static OperationResult<T> Failed(params string[] errors)
+        public new static OperationResult<TData> Failed(params string[] errors)
         {
-            return new OperationResult<T>(errors);
+            return new OperationResult<TData>(errors);
         }
 
-        public new static OperationResult<T> Failed(string error)
+        public new static OperationResult<TData> Failed(string error)
         {
-            return new OperationResult<T>(error);
+            return new OperationResult<TData>(error);
         }
     }
+
 }
