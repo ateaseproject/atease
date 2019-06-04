@@ -17,6 +17,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\src\Achehre.Framework.Json\Achehre.Framework.Json.csproj" />
     <ProjectReference Include="..\..\src\Achehre.Framework\Achehre.Framework.csproj" />
   </ItemGroup>
 

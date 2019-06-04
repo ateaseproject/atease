@@ -1,4 +1,5 @@
 using System;
+using Achehre.Framework.Json;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using Xunit;
@@ -101,20 +102,7 @@ namespace Achehre.Framework.Test
             Assert.Equal(operationResult.Errors, deserializedOperationResult.Errors);
         }
 
-        [Fact]
-        public void DeserializeOperationResultT_SuccessWithIntData()
-        {
-            var data = 10;
-            var operationResult = OperationResult<int>.Succeed(data);
-            var serializedOperationResult = JsonConvert.SerializeObject(operationResult);
-            var deserializedOperationResult =
-                JsonConvert.DeserializeObject<OperationResult<int>>(serializedOperationResult,
-                                                                       new OperationResultConverter<int>());
-
-            Assert.Equal(operationResult.Succeeded, deserializedOperationResult.Succeeded);
-            Assert.Equal(operationResult.Data, deserializedOperationResult.Data);
-        }
-
+      
 
         [Fact]
         public void DeserializeOperationResultT_SuccessWithStringData()
@@ -165,78 +153,21 @@ namespace Achehre.Framework.Test
             Assert.Equal(operationResult.Data, deserializedOperationResult.Data);
         }
 
+        [Fact]
+        public void DeserializeOperationResultT_SuccessWithIntData()
+        {
+            var data = 10;
+            var operationResult = OperationResult<int>.Succeed(data);
+            var serializedOperationResult = JsonConvert.SerializeObject(operationResult);
+            var deserializedOperationResult =
+                JsonConvert.DeserializeObject<OperationResult<int>>(serializedOperationResult,
+                    new OperationResultConverter<int>());
+
+            Assert.Equal(operationResult.Succeeded, deserializedOperationResult.Succeeded);
+            Assert.Equal(operationResult.Data, deserializedOperationResult.Data);
+        }
+
 
     }
 
-
-    public class OperationResultConverter<TData> : JsonConverter<OperationResult<TData>>
-    {
-        public override void WriteJson(JsonWriter writer, OperationResult<TData> value, JsonSerializer serializer)
-        {
-            throw new NotImplementedException();
-        }
-
-        public override OperationResult<TData> ReadJson(JsonReader reader, Type objectType,
-                                                        OperationResult<TData> existingValue, bool hasExistingValue,
-                                                        JsonSerializer serializer)
-        {
-            var jsonObject = JObject.Load(reader);
-            var succeeded = jsonObject[nameof(OperationResult.Succeeded)].Value<bool>();
-            if (succeeded)
-            {
-                var data = jsonObject[nameof(OperationResult<TData>.Data)].ToObject<TData>();
-                return OperationResult<TData>.Succeed(data);
-            }
-
-
-            OperationResult<TData> failedOperationResult;
-
-            if (jsonObject[nameof(OperationResult<TData>.Errors)].HasValues)
-            {
-                var items = (JArray) jsonObject[nameof(OperationResult<TData>.Errors)];
-                var errors = items.ToObject<string[]>();
-                 failedOperationResult = OperationResult<TData>.Failed(errors);
-            }
-            else
-            {
-                failedOperationResult = OperationResult<TData>.Failed();
-            }
-
-            var dataObj = jsonObject[nameof(OperationResult<TData>.Data)].ToObject<TData>();
-            failedOperationResult.WithData(dataObj);
-
-            return failedOperationResult;
-        }
-    }
-
-
-    public class OperationResultConverter : JsonConverter<OperationResult>
-    {
-        public override void WriteJson(JsonWriter writer, OperationResult value, JsonSerializer serializer)
-        {
-            throw new NotImplementedException();
-        }
-
-        public override OperationResult ReadJson(JsonReader reader, Type objectType, OperationResult existingValue,
-                                                 bool hasExistingValue,
-                                                 JsonSerializer serializer)
-        {
-            var jsonObject = JObject.Load(reader);
-            var succeeded = jsonObject[nameof(OperationResult.Succeeded)].Value<bool>();
-            if (succeeded)
-            {
-                return OperationResult.Succeed();
-            }
-
-            if (jsonObject[nameof(OperationResult.Errors)].HasValues)
-            {
-                var items = (JArray) jsonObject[nameof(OperationResult.Errors)];
-                var errors = items.ToObject<string[]>();
-
-                return OperationResult.Failed(errors);
-            }
-
-            return OperationResult.Failed();
-        }
-    }
 }
