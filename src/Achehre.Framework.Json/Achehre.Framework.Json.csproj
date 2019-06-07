@@ -7,14 +7,12 @@
     <PackageProjectUrl>https://github.com/AChehre/Achehre.Framework</PackageProjectUrl>
     <RepositoryUrl>https://github.com/AChehre/Achehre.Framework</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
+    <Version>1.0.1</Version>
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Achehre.Framework" Version="1.0.4" />
     <PackageReference Include="Newtonsoft.Json" Version="12.0.2" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <ProjectReference Include="..\Achehre.Framework\Achehre.Framework.csproj" />
   </ItemGroup>
 
 </Project>
