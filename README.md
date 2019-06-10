@@ -5,7 +5,7 @@
 # @Ease
 [![NuGet](https://img.shields.io/nuget/v/AtEase.svg)](https://www.nuget.org/packages/AtEase)
 
-	@Ease Is a set of extensions and helpers.
+	@Ease is a set of extensions and helpers.
 
 **Quick links**
 
