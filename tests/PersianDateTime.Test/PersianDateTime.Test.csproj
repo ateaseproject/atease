@@ -13,7 +13,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\src\Achehre.Framework\Achehre.Framework.csproj" />
+    <ProjectReference Include="..\..\src\AtEase\AtEase.csproj" />
   </ItemGroup>
 
 </Project>

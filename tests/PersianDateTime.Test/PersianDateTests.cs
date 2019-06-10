@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using Achehre.Framework.Extenstions;
-using Achehre.Framework.Resources;
+using AtEase.Extensions.DateTime;
+using AtEase.Resources;
 using Xunit;
 
 namespace PersianDateTime.Test

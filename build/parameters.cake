@@ -13,8 +13,8 @@ public class AppInfo
     {
        return new AppInfo()
        {
-            AppName = "Achehre.Framework",
-            GitHubRepositoryName  = "Achehre.Framework",
+            AppName = "AtEase",
+            GitHubRepositoryName  = "AtEase",
             TargetFramework = "netcoreapp2.2",
             TargetFrameworkFull = "netstandard2.0",
        };

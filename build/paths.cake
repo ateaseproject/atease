@@ -164,7 +164,7 @@ public class BuildPackages
 
     public static BuildPackages GetPackages(BuildPaths paths, BuildVersion version)
     {
-        var packageName = "Achehre.Framework." + version.SemVersion + ".nupkg";
+        var packageName = "AtEase." + version.SemVersion + ".nupkg";
         var packages = new [] 
         {
             paths.Directories.NugetRootDir.CombineWithFilePath(packageName),
