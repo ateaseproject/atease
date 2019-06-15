@@ -99,10 +99,13 @@ namespace AtEase
 
         public TData Data { get; private set; }
 
-
-        public void WithData(TData data)
+        /// <summary>
+        /// Add data to result.
+        /// </summary>
+        public OperationResult<TData> WithData(TData data)
         {
             Data = data;
+            return this;
         }
 
         public static OperationResult<TData> Succeed(TData data)
