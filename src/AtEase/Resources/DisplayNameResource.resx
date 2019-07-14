@@ -219,4 +219,10 @@
   <data name="WeekWednesday" xml:space="preserve">
     <value>چهارشنبه</value>
   </data>
+  <data name="PageNumber" xml:space="preserve">
+    <value>شماره صفحه</value>
+  </data>
+  <data name="PageSize" xml:space="preserve">
+    <value>تعداد در صفحه</value>
+  </data>
 </root>
