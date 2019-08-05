@@ -1,4 +1,6 @@
-﻿namespace AtEase.Extensions
+﻿using System;
+
+namespace AtEase.Extensions
 {
     public static class StringExtensions
     {
@@ -46,6 +48,37 @@
                 .Replace("8", "۸")
                 .Replace("9", "۹");
         }
+
+        public static int? ToNullableInt(this string value)
+        {
+            if (int.TryParse(value, out var number))
+            {
+                return number;
+            }
+
+            return null;
+        }
+
+        public static int ToInt(this string value)
+        {
+            return Convert.ToInt32(value);
+        }
+
+        public static int ToInt16(this string value)
+        {
+            return Convert.ToInt16(value);
+        }
+
+        public static int ToInt32(this string value)
+        {
+            return Convert.ToInt32(value);
+        }
+
+        public static long ToInt64(this string value)
+        {
+            return Convert.ToInt64(value);
+        }
+
 
         public static string Format(this string value, object arg0)
         {
