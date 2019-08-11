@@ -18,5 +18,11 @@ namespace AtEase.Extensions.Collections
         {
             return items == null || !items.Any();
         }
+
+
+        public static bool IsNotNullOrEmpty<T>(this IList<T> items)
+        {
+            return items != null && items.Any();
+        }
     }
 }
