@@ -11,6 +11,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PersianDateTime.Test", "tes
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AtEase", "src\AtEase\AtEase.csproj", "{5C25E2BA-8A8F-4CB8-912A-DA69728044DE}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AtEase.Test", "tests\AtEase.Test\AtEase.Test.csproj", "{4D4FBC30-57BE-430E-A226-13A30E7BCB9C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -25,6 +27,10 @@ Global
 		{5C25E2BA-8A8F-4CB8-912A-DA69728044DE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5C25E2BA-8A8F-4CB8-912A-DA69728044DE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5C25E2BA-8A8F-4CB8-912A-DA69728044DE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4D4FBC30-57BE-430E-A226-13A30E7BCB9C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4D4FBC30-57BE-430E-A226-13A30E7BCB9C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4D4FBC30-57BE-430E-A226-13A30E7BCB9C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4D4FBC30-57BE-430E-A226-13A30E7BCB9C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -32,6 +38,7 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{79D88821-1E8B-403C-BFA3-80A8D31FC43A} = {3B74CAC2-748B-419F-A115-36A03C6499B3}
 		{5C25E2BA-8A8F-4CB8-912A-DA69728044DE} = {43A8B8E3-C780-4D04-8D4F-BF73C11C8716}
+		{4D4FBC30-57BE-430E-A226-13A30E7BCB9C} = {3B74CAC2-748B-419F-A115-36A03C6499B3}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {0D699927-0CE5-4428-AC21-F1C80B23D6AA}

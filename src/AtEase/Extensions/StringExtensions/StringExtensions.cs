@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Text;
 using System.Text.RegularExpressions;
 
 namespace AtEase.Extensions
@@ -99,6 +100,41 @@ namespace AtEase.Extensions
         public static string RemoveWhiteSpaces(this string value)
         {
             return Regex.Replace(value, @"\s+", "");
+        }
+
+        public static string MergeAdjacentWhiteSpaces(this string value)
+        {
+            // With regex it takes more time
+            //var trimmer = new Regex(@"\s\s+", RegexOptions.Compiled);
+            //trimmer.Replace(value, " ");
+
+            var stringBuilder = new StringBuilder(value.Length);
+
+            var inSpaces = false;
+
+
+            foreach (var @char in value)
+            {
+                if (inSpaces)
+                {
+                    if (@char != ' ')
+                    {
+                        inSpaces = false;
+                        stringBuilder.Append(@char);
+                    }
+                }
+                else if (@char == ' ')
+                {
+                    inSpaces = true;
+                    stringBuilder.Append(' ');
+                }
+                else
+                {
+                    stringBuilder.Append(@char);
+                }
+            }
+
+            return stringBuilder.ToString();
         }
     }
 }

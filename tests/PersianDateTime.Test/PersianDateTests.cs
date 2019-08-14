@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using AtEase.Extensions.DateTime;
+using AtEase.Extensions;
 using AtEase.Resources;
 using Xunit;
 
@@ -26,7 +26,7 @@ namespace PersianDateTime.Test
         [Theory]
         [MemberData(nameof(Data))]
         public void ToPersianDateTimeExtension_DateTimeFormat_PersianDateValue(DateTime time, string format,
-                                                                               string expectedValue)
+            string expectedValue)
         {
             var persianDate = time.ToPersianDateTime(format);
             Assert.Equal(expectedValue, persianDate);
