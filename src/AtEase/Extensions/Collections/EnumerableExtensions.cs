@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace AtEase.Extensions.Collections
@@ -16,7 +17,22 @@ namespace AtEase.Extensions.Collections
         /// </returns>
         public static bool IsNullOrEmpty<T>(this IEnumerable<T> items)
         {
-            return items == null || !items.Any();
+            return items == null || items.NotAny();
+        }
+
+        public static bool IsNotNullOrEmpty<T>(this IEnumerable<T> items)
+        {
+            return items != null && items.Any();
+        }
+
+        public static bool NotAny<TSource>(this IEnumerable<TSource> source)
+        {
+            return !source.Any();
+        }
+
+        public static bool NotAny<TSource>(this IEnumerable<TSource> source, Func<TSource, bool> predicate)
+        {
+            return !source.Any(predicate);
         }
     }
 }

@@ -1,6 +1,8 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 
-namespace AtEase.Extensions.Collections
+namespace AtEase.Extensions
 {
     public static class ArrayExtensions
     {
@@ -13,9 +15,15 @@ namespace AtEase.Extensions.Collections
         /// <returns>
         ///     <c>true</c> if this list is null or empty; otherwise, <c>false</c>.
         /// </returns>
-        public static bool IsNullOrEmpty<T>(this Array items)
+        public static bool IsNullOrEmpty(this Array items)
         {
             return items == null || items.Length == 0;
         }
+
+        public static bool IsNotNullOrEmpty(this Array items)
+        {
+            return items != null && items.Length > 0;
+        }
+
     }
 }

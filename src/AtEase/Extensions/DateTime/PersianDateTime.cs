@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Globalization;
 
-namespace AtEase.Extensions.DateTime
+namespace AtEase.Extensions
 {
     public struct PersianDateTime
     {

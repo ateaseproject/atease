@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace AtEase.Extensions.Numbers
+namespace AtEase.Extensions
 {
     public static partial class NumbersToTimeSpanExtensions
     {

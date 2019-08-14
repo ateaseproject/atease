@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using AtEase.Resources;
 
-namespace AtEase.Extensions.DateTime
+namespace AtEase.Extensions
 {
     public enum PersianMonths
     {

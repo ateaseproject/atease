@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Text.RegularExpressions;
 
 namespace AtEase.Extensions
 {
@@ -93,6 +94,11 @@ namespace AtEase.Extensions
         public static string Format(this string value, object arg0, object arg1, object arg2)
         {
             return string.Format(value, arg0, arg1, arg2);
+        }
+
+        public static string RemoveWhiteSpaces(this string value)
+        {
+            return Regex.Replace(value, @"\s+", "");
         }
     }
 }

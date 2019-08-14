@@ -1,6 +1,6 @@
 ﻿using System.Globalization;
 
-namespace AtEase.Extensions.DateTime
+namespace AtEase.Extensions
 {
     public static class DateTimeExtensions
     {

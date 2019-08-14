@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace AtEase.Extensions.Collections
@@ -24,5 +25,16 @@ namespace AtEase.Extensions.Collections
         {
             return items != null && items.Any();
         }
+
+        public static bool NotAny<TSource>(this IList<TSource> source)
+        {
+            return !source.Any();
+        }
+
+        public static bool NotAny<TSource>(this IList<TSource> source, Func<TSource, bool> predicate)
+        {
+            return !source.Any(predicate);
+        }
+
     }
 }
