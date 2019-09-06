@@ -6,7 +6,7 @@ namespace AtEase.Test
 {
     public class DecimalExtensionsTests
     {
-        public static IEnumerable<object[]> doubles =>
+        public static IEnumerable<object[]> Doubles =>
             new List<object[]>
             {
                 new object[] {null, null},
@@ -16,7 +16,7 @@ namespace AtEase.Test
 
 
         [Theory]
-        [MemberData(nameof(doubles))]
+        [MemberData(nameof(Doubles))]
         public void nullable_double_to_nullable_decimal(double? value,
             decimal? expectedValue)
         {
