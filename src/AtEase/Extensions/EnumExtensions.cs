@@ -12,6 +12,47 @@ namespace AtEase.Extensions
     {
         private static readonly Dictionary<Enum, string> Cache = new Dictionary<Enum, string>();
 
+        public static T AsEnum<T>(this int value) where T : struct, IConvertible, IComparable, IFormattable
+        {
+            if (!typeof(T).IsEnum)
+            {
+                throw new ArgumentException("T must be an enumerated type");
+            }
+
+            return (T) Enum.ToObject(typeof(T), value);
+        }
+
+
+        /// <summary>
+        ///     Converts the value of the specified Enum to a 32-bit signed integer.
+        /// </summary>
+        /// <param name="value">Enum</param>
+        /// <returns>Int32</returns>
+        public static int ToInt(this Enum value)
+        {
+            return Convert.ToInt32(value);
+        }
+
+        /// <summary>
+        ///     Converts the value of the specified Enum to a 16-bit signed integer.
+        /// </summary>
+        /// <param name="value">Enum</param>
+        /// <returns>Int16</returns>
+        public static int ToInt16(this Enum value)
+        {
+            return Convert.ToInt16(value);
+        }
+
+        /// <summary>
+        ///     Converts the value of the specified Enum to an 8-bit unsigned integer.
+        /// </summary>
+        /// <param name="value">Enum</param>
+        /// <returns>Byte</returns>
+        public static int ToByte(this Enum value)
+        {
+            return Convert.ToByte(value);
+        }
+
         public static string GetDescription(this Enum value)
         {
             {
@@ -102,7 +143,7 @@ namespace AtEase.Extensions
 
             return descriptionAttributes.Length > 0 ? descriptionAttributes[0].Name : value.ToString();
         }
-        
+
         public static IEnumerable<KeyValuePair<int, string>> ToKeyValueList<T>() where T : struct
         {
             return Enum.GetValues(typeof(T)).Cast<Enum>()
