@@ -30,7 +30,7 @@ namespace AtEase.Test
 
         [Theory]
         [MemberData(nameof(Email))]
-        public void enum_to_int(string email, bool isValid)
+        public void email_is_valid(string email, bool isValid)
         {
             Assert.Equal(isValid, email.IsValidEmail());
         }
