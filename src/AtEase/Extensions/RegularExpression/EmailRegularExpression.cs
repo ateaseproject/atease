@@ -8,14 +8,14 @@ namespace AtEase.Extensions.RegularExpression
     {
         // from https://docs.microsoft.com/en-us/dotnet/standard/base-types/how-to-verify-that-strings-are-in-valid-email-format
 
-        public const string EmailRegex =
+        public const string EmailValidationRegex =
             @"^(?("")("".+?(?<!\\)""@)|(([0-9a-z]((\.(?!\.))|[-!#\$%&'\*\+/=\?\^`\{\}\|~\w])*)(?<=[0-9a-z])@))" +
             @"(?(\[)(\[(\d{1,3}\.){3}\d{1,3}\])|(([0-9a-z][-0-9a-z]*[0-9a-z]*\.)+[a-z0-9][\-a-z0-9]{0,22}[a-z0-9]))$";
 
         public const string EmailComaSeparatedRegex = "";
 
 
-        public static bool IsValidEmail(this string email, TimeSpan? matchTimeout = null)
+        public static bool IsValidEmail(this string email)
         {
             if (email.IsNullOrEmptyOrWhiteSpace())
             {
@@ -53,7 +53,7 @@ namespace AtEase.Extensions.RegularExpression
 
             try
             {
-                return Regex.IsMatch(email, EmailRegex,
+                return Regex.IsMatch(email, EmailValidationRegex,
                     RegexOptions.IgnoreCase, TimeSpan.FromMilliseconds(250));
             }
             catch (RegexMatchTimeoutException)
