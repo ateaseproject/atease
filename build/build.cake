@@ -155,31 +155,37 @@ Task("Tests-With_Coverage")
 Task("Create-NuGet-Packages")
 	.Description("Generates NuGet packages for each project.")
     .Does(() =>
-    {                
-		var settings = new DotNetCorePackSettings
-     	{
-        	Configuration = parameters.Configuration,
-        	OutputDirectory = parameters.Paths.Directories.NugetRootDir.ToString(),
-     	};
-		var projectPath = parameters.Paths.Directories.SrcRootDir
-						.Combine(parameters.AppInfo.AppName)
-						.Combine($"{parameters.AppInfo.AppName}.csproj");
-    	DotNetCorePack(projectPath.ToString(), settings);
+    {    
+		if(parameters.IsTagged)
+		{             
+			var settings = new DotNetCorePackSettings
+			{
+				Configuration = parameters.Configuration,
+				OutputDirectory = parameters.Paths.Directories.NugetRootDir.ToString(),
+			};
+			var projectPath = parameters.Paths.Directories.SrcRootDir
+							.Combine(parameters.AppInfo.AppName)
+							.Combine($"{parameters.AppInfo.AppName}.csproj");
+			DotNetCorePack(projectPath.ToString(), settings);
+		}
 
     });
  Task("Push-Nuget-Packages")
 	.Description("Push NuGet packages to nuget server.")
 	.Does(() =>
 	{
-		var nugetFiles = System.IO.Directory.GetFiles(parameters.Paths.Directories.NugetRootDir.ToString(), "*.nupkg")
-										.Select(z => new FilePath(z)).ToList();
-		var settings = new NuGetPushSettings()
-		{
-			Source = parameters.NuGet.ApiUrl,
-			ApiKey = parameters.NuGet.ApiKey,
-		};
+		if(parameters.IsTagged)
+		{ 
+			var nugetFiles = System.IO.Directory.GetFiles(parameters.Paths.Directories.NugetRootDir.ToString(), "*.nupkg")
+											.Select(z => new FilePath(z)).ToList();
+			var settings = new NuGetPushSettings()
+			{
+				Source = parameters.NuGet.ApiUrl,
+				ApiKey = parameters.NuGet.ApiKey,
+			};
 
-		NuGetPush(nugetFiles, settings);
+			NuGetPush(nugetFiles, settings);
+		}
 	});
 Task("Default")
 	.IsDependentOn("Clean")

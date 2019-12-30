@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using AtEase.Extensions.RegularExpression;
+﻿using AtEase.Extensions.RegularExpression;
 using Xunit;
 
 namespace AtEase.Test
@@ -58,7 +55,6 @@ namespace AtEase.Test
         [InlineData("00:00:61")]
         [InlineData("24:00:00")]
         [InlineData("24:00")]
-
         [InlineData("")]
         public void time_is_invalid(string time)
         {
