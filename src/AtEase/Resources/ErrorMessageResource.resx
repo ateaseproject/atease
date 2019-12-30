@@ -147,4 +147,7 @@
   <data name="Required" xml:space="preserve">
     <value>لطفا {0} را وارد نمایید.</value>
   </data>
+  <data name="ShamsiYearIsNotValid" xml:space="preserve">
+    <value>سال شمسی معتبر نمیباشد.</value>
+  </data>
 </root>
