@@ -1,7 +1,7 @@
 #tool "nuget:?package=GitVersion.CommandLine"
 #load "./parameters.cake"
-#tool "nuget:?package=OpenCover"
-#tool "nuget:?package=ReportGenerator"
+// #tool "nuget:?package=OpenCover"
+// #tool "nuget:?package=ReportGenerator"
 
 
 
@@ -138,20 +138,48 @@ Task("Tests-With_Coverage")
 	 };
  
 		
- 	    OpenCover(tool => testAction(tool),
-                        parameters.Paths.Files.TestCoverageOutput,
-                        new OpenCoverSettings()
-                        {
-                            ReturnTargetCodeOffset = 0,
-                            OldStyle = true,
-                            MergeOutput = true
-                        }
-                        .WithFilter($"+[{parameters.AppInfo.AppName}]*")
-                        .WithFilter($"-[*.Test]*")
-						.ExcludeByAttribute("*.ExcludeFromCodeCoverage*")
-                        .ExcludeByFile("*.Designer.cs;*.g.cs;*.g.i.cs"));
-      ReportGenerator(parameters.Paths.Files.TestCoverageOutput, parameters.Paths.Directories.TestResultsCoverReportDir);
+ 	//     OpenCover(tool => testAction(tool),
+    //                     parameters.Paths.Files.TestCoverageOutput,
+    //                     new OpenCoverSettings()
+    //                     {
+    //                         ReturnTargetCodeOffset = 0,
+    //                         OldStyle = true,
+    //                         MergeOutput = true
+    //                     }
+    //                     .WithFilter($"+[{parameters.AppInfo.AppName}]*")
+    //                     .WithFilter($"-[*.Test]*")
+	// 					.ExcludeByAttribute("*.ExcludeFromCodeCoverage*")
+    //                     .ExcludeByFile("*.Designer.cs;*.g.cs;*.g.i.cs"));
+    //   ReportGenerator(parameters.Paths.Files.TestCoverageOutput, parameters.Paths.Directories.TestResultsCoverReportDir);
 });
+
+
+Task("Tests")
+	.Description("Run tests and create test coverage reports.")
+    .Does(() =>
+	{
+	Action<ICakeContext> testAction = context =>
+  	{
+		foreach(var testDir in parameters.Paths.Directories.TestDirs)
+    	{
+	 		var projects = GetFiles($"{testDir}/**/*.Test.csproj");
+        	foreach(var project in projects)
+        	{
+				var vSTestReportPath  = $"{parameters.Paths.Directories.TestResultsDir.CombineWithFilePath(project.GetFilenameWithoutExtension()).FullPath}.xml";
+				var settings = new DotNetCoreTestSettings
+     				{
+	    				Configuration = parameters.Configuration,
+						OutputDirectory = parameters.Paths.Directories.TestResultsDir,
+						ResultsDirectory = parameters.Paths.Directories.TestResultsDir,
+						Verbosity = DotNetCoreVerbosity.Minimal,
+						VSTestReportPath  = vSTestReportPath,
+     				};
+ 					context.DotNetCoreTest(project.FullPath, settings);
+        	}
+		}
+	 };
+});
+
 Task("Create-NuGet-Packages")
 	.Description("Generates NuGet packages for each project.")
     .Does(() =>
@@ -191,7 +219,7 @@ Task("Default")
 	.IsDependentOn("Clean")
 	.IsDependentOn("Restore")
 	.IsDependentOn("Build")
-	.IsDependentOn("Tests-With_Coverage")
+	.IsDependentOn("Tests")
 	.IsDependentOn("Create-NuGet-Packages")
 	.IsDependentOn("Push-Nuget-Packages");
 
