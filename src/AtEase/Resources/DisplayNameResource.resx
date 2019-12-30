@@ -219,4 +219,7 @@
   <data name="WeekWednesday" xml:space="preserve">
     <value>چهارشنبه</value>
   </data>
+  <data name="ShamsiYear" xml:space="preserve">
+    <value>سال شمسی</value>
+  </data>
 </root>
