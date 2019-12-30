@@ -9,9 +9,9 @@
     <PackageProjectUrl>https://github.com/ateaseproject/atease</PackageProjectUrl>
     <RepositoryUrl>https://github.com/ateaseproject/atease</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
-    <Version>1.0.18.4</Version>
-    <AssemblyVersion>1.0.18.4</AssemblyVersion>
-    <FileVersion>1.0.18.4</FileVersion>
+    <Version>1.0.18.5</Version>
+    <AssemblyVersion>1.0.18.5</AssemblyVersion>
+    <FileVersion>1.0.18.5</FileVersion>
   </PropertyGroup>
 
   <ItemGroup>
