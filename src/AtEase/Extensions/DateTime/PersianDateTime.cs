@@ -115,10 +115,7 @@ namespace AtEase.Extensions
             var value = format;
 
             value = value.Replace("yyyy", Year.ToString("D4"));
-            //value = value.Replace("yyy", Year.ToString("D4").Substring(1));
-            //value = value.Replace("yy", Year.ToString("D4").Substring(2));
-            //value = value.Replace("y", Year.ToString("D4").Substring(3));
-
+          
             value = value.Replace("MMMM", Month.GetDisplayName());
             value = value.Replace("MMM", (Month.GetDisplayName() + "   ").Substring(0, 3));
             value = value.Replace("MM", ((int) Month).ToString("D2"));
