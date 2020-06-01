@@ -1,0 +1,588 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>AtEase</name>
+    </assembly>
+    <members>
+        <member name="M:AtEase.Extensions.ArrayExtensions.IsNullOrEmpty(System.Array)">
+            <summary>
+                Determines whether a collection is null or has no elements without having to enumerate the entire collection to get
+                a count.  Uses LINQ.
+            </summary>
+            <typeparam name="T">The item type.</typeparam>
+            <param name="items">The items.</param>
+            <returns>
+                <c>true</c> if this list is null or empty; otherwise, <c>false</c>.
+            </returns>
+        </member>
+        <member name="M:AtEase.Extensions.Collections.EnumerableExtensions.IsNullOrEmpty``1(System.Collections.Generic.IEnumerable{``0})">
+            <summary>
+                Determines whether a collection is null or has no elements without having to enumerate the entire collection to get
+                a count.  Uses LINQ.
+            </summary>
+            <typeparam name="T">The item type.</typeparam>
+            <param name="items">The items.</param>
+            <returns>
+                <c>true</c> if this list is null or empty; otherwise, <c>false</c>.
+            </returns>
+        </member>
+        <member name="M:AtEase.Extensions.Collections.ListExtensions.IsNullOrEmpty``1(System.Collections.Generic.IList{``0})">
+            <summary>
+                Determines whether a collection is null or has no elements without having to enumerate the entire collection to get
+                a count.  Uses LINQ.
+            </summary>
+            <typeparam name="T">The item type.</typeparam>
+            <param name="items">The items.</param>
+            <returns>
+                <c>true</c> if this list is null or empty; otherwise, <c>false</c>.
+            </returns>
+        </member>
+        <member name="M:AtEase.Extensions.EnumExtensions.ToInt(System.Enum)">
+            <summary>
+                Converts the value of the specified Enum to a 32-bit signed integer.
+            </summary>
+            <param name="value">Enum</param>
+            <returns>Int32</returns>
+        </member>
+        <member name="M:AtEase.Extensions.EnumExtensions.ToInt16(System.Enum)">
+            <summary>
+                Converts the value of the specified Enum to a 16-bit signed integer.
+            </summary>
+            <param name="value">Enum</param>
+            <returns>Int16</returns>
+        </member>
+        <member name="M:AtEase.Extensions.EnumExtensions.ToByte(System.Enum)">
+            <summary>
+                Converts the value of the specified Enum to an 8-bit unsigned integer.
+            </summary>
+            <param name="value">Enum</param>
+            <returns>Byte</returns>
+        </member>
+        <member name="M:AtEase.Extensions.Numbers.IntExtensions.IsZeroOrMin(System.Int32)">
+            <summary>
+            Indicates the value as int  is 0 or int.MinValue value.
+            </summary>
+            <param name="value">Int value</param>
+            <returns>Returns true if value is 0 or min value.</returns>
+        </member>
+        <member name="M:AtEase.Extensions.Numbers.IntExtensions.IsEven(System.Int32)">
+            <summary>
+            Indicates the value is even.
+            </summary>
+            <param name="value">Int value</param>
+            <returns>Returns true if value is even.</returns>
+        </member>
+        <member name="M:AtEase.Extensions.Numbers.IntExtensions.IsOdd(System.Int32)">
+            <summary>
+            Indicates the value is odd.
+            </summary>
+            <param name="value">Int value</param>
+            <returns>Returns true if value is odd.</returns>
+        </member>
+        <member name="M:AtEase.Extensions.Numbers.LongExtensions.IsZeroOrMin(System.Int64)">
+            <summary>
+            Indicates the value as long  is 0 or long.MinValue value.
+            </summary>
+            <param name="value">Long value</param>
+            <returns>Returns true if value is 0 or min value.</returns>
+        </member>
+        <member name="M:AtEase.Extensions.Numbers.LongExtensions.IsEven(System.Int64)">
+            <summary>
+            Indicates the value is even.
+            </summary>
+            <param name="value">Long value</param>
+            <returns>Returns true if value is even.</returns>
+        </member>
+        <member name="M:AtEase.Extensions.Numbers.LongExtensions.IsOdd(System.Int64)">
+            <summary>
+            Indicates the value is odd.
+            </summary>
+            <param name="value">Long value</param>
+            <returns>Returns true if value is odd.</returns>
+        </member>
+        <member name="M:AtEase.Extensions.NumbersToTimeSpanExtensions.Milliseconds(System.Double)">
+            <summary>
+                Returns a new <see cref="T:System.TimeSpan"></see> object represented by <paramref name="number" /> as <c>Milliseconds</c>.
+            </summary>
+        </member>
+        <member name="M:AtEase.Extensions.NumbersToTimeSpanExtensions.Seconds(System.Double)">
+            <summary>
+                Returns a new <see cref="T:System.TimeSpan"></see> object represented by <paramref name="number" /> as <c>Seconds</c>.
+            </summary>
+        </member>
+        <member name="M:AtEase.Extensions.NumbersToTimeSpanExtensions.Minutes(System.Double)">
+            <summary>
+                Returns a new <see cref="T:System.TimeSpan"></see> object represented by <paramref name="number" /> as <c>Minutes</c>.
+            </summary>
+        </member>
+        <member name="M:AtEase.Extensions.NumbersToTimeSpanExtensions.Hours(System.Double)">
+            <summary>
+                Returns a new <see cref="T:System.TimeSpan"></see> object represented by <paramref name="number" /> as <c>Hours</c>.
+            </summary>
+        </member>
+        <member name="M:AtEase.Extensions.NumbersToTimeSpanExtensions.Days(System.Double)">
+            <summary>
+                Returns a new <see cref="T:System.TimeSpan"></see> object represented by <paramref name="number" /> as <c>Days</c>.
+            </summary>
+        </member>
+        <member name="M:AtEase.Extensions.NumbersToTimeSpanExtensions.Weeks(System.Double)">
+            <summary>
+                Returns a new <see cref="T:System.TimeSpan"></see> object represented by <paramref name="number" /> as <c>Weeks</c>.
+            </summary>
+        </member>
+        <member name="M:AtEase.Extensions.NumbersToTimeSpanExtensions.ToTimeSpan(System.ValueTuple{System.Int32,System.Int32,System.Int32})">
+            <summary>
+                Initializes a new instance of the <see cref="T:System.TimeSpan"></see> structure to a specified number of hours, minutes and
+                seconds.
+            </summary>
+            <param name="value">Tuple(hours, minutes, seconds)</param>
+        </member>
+        <member name="M:AtEase.Extensions.NumbersToTimeSpanExtensions.ToTimeSpan(System.ValueTuple{System.Int32,System.Int32,System.Int32,System.Int32})">
+            <summary>
+                Initializes a new instance of the <see cref="T:System.TimeSpan"></see> structure to a specified number of days, hours,
+                minutes, and seconds.
+            </summary>
+            <param name="value">Tuple(days, hours, minutes, seconds)</param>
+        </member>
+        <member name="M:AtEase.Extensions.NumbersToTimeSpanExtensions.ToTimeSpan(System.ValueTuple{System.Int32,System.Int32,System.Int32,System.Int32,System.Int32})">
+            <summary>
+                Initializes a new instance of the <see cref="T:System.TimeSpan"></see> structure to a specified number of days, hours,
+                minutes, seconds, and milliseconds.
+            </summary>
+            <param name="value">Tuple(days, hours, minutes, seconds, milliseconds)</param>
+        </member>
+        <member name="M:AtEase.Extensions.NumbersToTimeSpanExtensions.Ticks(System.Int32)">
+            <summary>
+                Returns a new <see cref="T:System.TimeSpan"></see> object represented by <paramref name="number" /> as <c>Ticks</c>.
+            </summary>
+        </member>
+        <member name="M:AtEase.Extensions.NumbersToTimeSpanExtensions.Milliseconds(System.Int32)">
+            <summary>
+                Returns a new <see cref="T:System.TimeSpan"></see> object represented by <paramref name="number" /> as <c>Milliseconds</c>.
+            </summary>
+        </member>
+        <member name="M:AtEase.Extensions.NumbersToTimeSpanExtensions.Seconds(System.Int32)">
+            <summary>
+                Returns a new <see cref="T:System.TimeSpan"></see> object represented by <paramref name="number" /> as <c>Seconds</c>.
+            </summary>
+        </member>
+        <member name="M:AtEase.Extensions.NumbersToTimeSpanExtensions.Minutes(System.Int32)">
+            <summary>
+                Returns a new <see cref="T:System.TimeSpan"></see> object represented by <paramref name="number" /> as <c>Minutes</c>.
+            </summary>
+        </member>
+        <member name="M:AtEase.Extensions.NumbersToTimeSpanExtensions.Hours(System.Int32)">
+            <summary>
+                Returns a new <see cref="T:System.TimeSpan"></see> object represented by <paramref name="number" /> as <c>Hours</c>.
+            </summary>
+        </member>
+        <member name="M:AtEase.Extensions.NumbersToTimeSpanExtensions.Days(System.Int32)">
+            <summary>
+                Returns a new <see cref="T:System.TimeSpan"></see> object represented by <paramref name="number" /> as <c>Days</c>.
+            </summary>
+        </member>
+        <member name="M:AtEase.Extensions.NumbersToTimeSpanExtensions.Weeks(System.Int32)">
+            <summary>
+                Returns a new <see cref="T:System.TimeSpan"></see> object represented by <paramref name="number" /> as <c>Weeks</c>.
+            </summary>
+        </member>
+        <member name="M:AtEase.Extensions.NumbersToTimeSpanExtensions.Ticks(System.Int64)">
+            <summary>
+                Returns a new <see cref="T:System.TimeSpan"></see> object represented by <paramref name="number" /> as <c>Ticks</c>
+                .
+            </summary>
+        </member>
+        <member name="M:AtEase.Extensions.NumbersToTimeSpanExtensions.Milliseconds(System.Int64)">
+            <summary>
+                Returns a new <see cref="T:System.TimeSpan"></see> object represented by <paramref name="number" /> as <c>Milliseconds</c>.
+            </summary>
+        </member>
+        <member name="M:AtEase.Extensions.NumbersToTimeSpanExtensions.Seconds(System.Int64)">
+            <summary>
+                Returns a new <see cref="T:System.TimeSpan"></see> object represented by <paramref name="number" /> as <c>Seconds</c>.
+            </summary>
+        </member>
+        <member name="M:AtEase.Extensions.NumbersToTimeSpanExtensions.Minutes(System.Int64)">
+            <summary>
+                Returns a new <see cref="T:System.TimeSpan"></see> object represented by <paramref name="number" /> as <c>Minutes</c>.
+            </summary>
+        </member>
+        <member name="M:AtEase.Extensions.NumbersToTimeSpanExtensions.Hours(System.Int64)">
+            <summary>
+                Returns a new <see cref="T:System.TimeSpan"></see> object represented by <paramref name="number" /> as <c>Hours</c>.
+            </summary>
+        </member>
+        <member name="M:AtEase.Extensions.NumbersToTimeSpanExtensions.Days(System.Int64)">
+            <summary>
+                Returns a new <see cref="T:System.TimeSpan"></see> object represented by <paramref name="number" /> as <c>Days</c>.
+            </summary>
+        </member>
+        <member name="M:AtEase.Extensions.NumbersToTimeSpanExtensions.Weeks(System.Int64)">
+            <summary>
+                Returns a new <see cref="T:System.TimeSpan"></see> object represented by <paramref name="number" /> as <c>Weeks</c>.
+            </summary>
+        </member>
+        <member name="M:AtEase.Extensions.NumbersToTimeSpanExtensions.Ticks(System.Int16)">
+            <summary>
+                Returns a new <see cref="T:System.TimeSpan"></see> object represented by <paramref name="number" /> as <c>Ticks</c>.
+            </summary>
+        </member>
+        <member name="M:AtEase.Extensions.NumbersToTimeSpanExtensions.Milliseconds(System.Int16)">
+            <summary>
+                Returns a new <see cref="T:System.TimeSpan"></see> object represented by <paramref name="number" /> as <c>Milliseconds</c>.
+            </summary>
+        </member>
+        <member name="M:AtEase.Extensions.NumbersToTimeSpanExtensions.Seconds(System.Int16)">
+            <summary>
+                Returns a new <see cref="T:System.TimeSpan"></see> object represented by <paramref name="number" /> as <c>Seconds</c>.
+            </summary>
+        </member>
+        <member name="M:AtEase.Extensions.NumbersToTimeSpanExtensions.Minutes(System.Int16)">
+            <summary>
+                Returns a new <see cref="T:System.TimeSpan"></see> object represented by <paramref name="number" /> as <c>Minutes</c>.
+            </summary>
+        </member>
+        <member name="M:AtEase.Extensions.NumbersToTimeSpanExtensions.Hours(System.Int16)">
+            <summary>
+                Returns a new <see cref="T:System.TimeSpan"></see> object represented by <paramref name="number" /> as <c>Hours</c>.
+            </summary>
+        </member>
+        <member name="M:AtEase.Extensions.NumbersToTimeSpanExtensions.Days(System.Int16)">
+            <summary>
+                Returns a new <see cref="T:System.TimeSpan"></see> object represented by <paramref name="number" /> as <c>Days</c>.
+            </summary>
+        </member>
+        <member name="M:AtEase.Extensions.NumbersToTimeSpanExtensions.Weeks(System.Int16)">
+            <summary>
+                Returns a new <see cref="T:System.TimeSpan"></see> object represented by <paramref name="number" /> as <c>Weeks</c>.
+            </summary>
+        </member>
+        <member name="M:AtEase.OperationResult.#ctor(System.String[])">
+            <summary>
+                Failure constructor that takes error messages
+            </summary>
+            <param name="errors"></param>
+        </member>
+        <member name="M:AtEase.OperationResult.#ctor(System.Collections.Generic.IEnumerable{System.String})">
+            <summary>
+                Failure constructor that takes error messages
+            </summary>
+            <param name="errors"></param>
+        </member>
+        <member name="M:AtEase.OperationResult.#ctor(System.Boolean)">
+            <summary>
+                Constructor that takes whether the result is successful
+            </summary>
+            <param name="success"></param>
+        </member>
+        <member name="P:AtEase.OperationResult.Succeeded">
+            <summary>
+                True if the operation was successful
+            </summary>
+        </member>
+        <member name="P:AtEase.OperationResult.Errors">
+            <summary>
+                List of errors
+            </summary>
+        </member>
+        <member name="M:AtEase.OperationResult.Succeed">
+            <summary>
+             Static success result
+            </summary>
+            <returns>Succeed OperationResult</returns>
+        </member>
+        <member name="M:AtEase.OperationResult.Failed(System.String[])">
+            <summary>
+                Failed helper method
+            </summary>
+            <param name="errors"></param>
+            <returns>OperationResult with error</returns>
+        </member>
+        <member name="M:AtEase.OperationResult`1.#ctor(System.String[])">
+            <summary>
+                Failure constructor that takes error messages
+            </summary>
+            <param name="errors"></param>
+        </member>
+        <member name="M:AtEase.OperationResult`1.#ctor(System.Collections.Generic.IEnumerable{System.String})">
+            <summary>
+                Failure constructor that takes error messages
+            </summary>
+            <param name="errors"></param>
+        </member>
+        <member name="M:AtEase.OperationResult`1.WithData(`0)">
+            <summary>
+            Add succeedData to result.
+            </summary>
+        </member>
+        <member name="M:AtEase.OperationResult`1.Failed(System.String[])">
+            <summary>
+                Failed helper method
+            </summary>
+            <param name="errors"></param>
+            <returns></returns>
+        </member>
+        <member name="T:AtEase.Resources.DisplayNameResource">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:AtEase.Resources.DisplayNameResource.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:AtEase.Resources.DisplayNameResource.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="P:AtEase.Resources.DisplayNameResource.Amount">
+            <summary>
+              Looks up a localized string similar to مبلغ.
+            </summary>
+        </member>
+        <member name="P:AtEase.Resources.DisplayNameResource.Available">
+            <summary>
+              Looks up a localized string similar to موجود.
+            </summary>
+        </member>
+        <member name="P:AtEase.Resources.DisplayNameResource.Chosen">
+            <summary>
+              Looks up a localized string similar to انتخاب شده.
+            </summary>
+        </member>
+        <member name="P:AtEase.Resources.DisplayNameResource.Debug">
+            <summary>
+              Looks up a localized string similar to Debug.
+            </summary>
+        </member>
+        <member name="P:AtEase.Resources.DisplayNameResource.EnumValue">
+            <summary>
+              Looks up a localized string similar to EnumValue.
+            </summary>
+        </member>
+        <member name="P:AtEase.Resources.DisplayNameResource.Error">
+            <summary>
+              Looks up a localized string similar to Error.
+            </summary>
+        </member>
+        <member name="P:AtEase.Resources.DisplayNameResource.Fatal">
+            <summary>
+              Looks up a localized string similar to Fatal.
+            </summary>
+        </member>
+        <member name="P:AtEase.Resources.DisplayNameResource.Height">
+            <summary>
+              Looks up a localized string similar to طول.
+            </summary>
+        </member>
+        <member name="P:AtEase.Resources.DisplayNameResource.Image">
+            <summary>
+              Looks up a localized string similar to تصویر.
+            </summary>
+        </member>
+        <member name="P:AtEase.Resources.DisplayNameResource.Information">
+            <summary>
+              Looks up a localized string similar to Information.
+            </summary>
+        </member>
+        <member name="P:AtEase.Resources.DisplayNameResource.None">
+            <summary>
+              Looks up a localized string similar to .
+            </summary>
+        </member>
+        <member name="P:AtEase.Resources.DisplayNameResource.PersianMonthAban">
+            <summary>
+              Looks up a localized string similar to آبان.
+            </summary>
+        </member>
+        <member name="P:AtEase.Resources.DisplayNameResource.PersianMonthAzar">
+            <summary>
+              Looks up a localized string similar to آذر.
+            </summary>
+        </member>
+        <member name="P:AtEase.Resources.DisplayNameResource.PersianMonthBahman">
+            <summary>
+              Looks up a localized string similar to بهمن.
+            </summary>
+        </member>
+        <member name="P:AtEase.Resources.DisplayNameResource.PersianMonthDey">
+            <summary>
+              Looks up a localized string similar to دی .
+            </summary>
+        </member>
+        <member name="P:AtEase.Resources.DisplayNameResource.PersianMonthEsfand">
+            <summary>
+              Looks up a localized string similar to اسفند.
+            </summary>
+        </member>
+        <member name="P:AtEase.Resources.DisplayNameResource.PersianMonthFarvardin">
+            <summary>
+              Looks up a localized string similar to فروردین.
+            </summary>
+        </member>
+        <member name="P:AtEase.Resources.DisplayNameResource.PersianMonthKhordad">
+            <summary>
+              Looks up a localized string similar to خرداد.
+            </summary>
+        </member>
+        <member name="P:AtEase.Resources.DisplayNameResource.PersianMonthMehr">
+            <summary>
+              Looks up a localized string similar to مهر.
+            </summary>
+        </member>
+        <member name="P:AtEase.Resources.DisplayNameResource.PersianMonthMordad">
+            <summary>
+              Looks up a localized string similar to مرداد.
+            </summary>
+        </member>
+        <member name="P:AtEase.Resources.DisplayNameResource.PersianMonthOrdibehesht">
+            <summary>
+              Looks up a localized string similar to اردیبهشت.
+            </summary>
+        </member>
+        <member name="P:AtEase.Resources.DisplayNameResource.PersianMonthShahrivar">
+            <summary>
+              Looks up a localized string similar to شهریور.
+            </summary>
+        </member>
+        <member name="P:AtEase.Resources.DisplayNameResource.PersianMonthTir">
+            <summary>
+              Looks up a localized string similar to تیر.
+            </summary>
+        </member>
+        <member name="P:AtEase.Resources.DisplayNameResource.PhoneNumber">
+            <summary>
+              Looks up a localized string similar to تلفن همراه.
+            </summary>
+        </member>
+        <member name="P:AtEase.Resources.DisplayNameResource.ShamsiYear">
+            <summary>
+              Looks up a localized string similar to سال شمسی.
+            </summary>
+        </member>
+        <member name="P:AtEase.Resources.DisplayNameResource.Title">
+            <summary>
+              Looks up a localized string similar to عنوان.
+            </summary>
+        </member>
+        <member name="P:AtEase.Resources.DisplayNameResource.TransactionId">
+            <summary>
+              Looks up a localized string similar to شناسه تراکنش.
+            </summary>
+        </member>
+        <member name="P:AtEase.Resources.DisplayNameResource.Warning">
+            <summary>
+              Looks up a localized string similar to Warning.
+            </summary>
+        </member>
+        <member name="P:AtEase.Resources.DisplayNameResource.WeekFriday">
+            <summary>
+              Looks up a localized string similar to جمعه.
+            </summary>
+        </member>
+        <member name="P:AtEase.Resources.DisplayNameResource.WeekMonday">
+            <summary>
+              Looks up a localized string similar to دوشنبه.
+            </summary>
+        </member>
+        <member name="P:AtEase.Resources.DisplayNameResource.WeekSaturday">
+            <summary>
+              Looks up a localized string similar to شنبه.
+            </summary>
+        </member>
+        <member name="P:AtEase.Resources.DisplayNameResource.WeekSunday">
+            <summary>
+              Looks up a localized string similar to یکشنبه.
+            </summary>
+        </member>
+        <member name="P:AtEase.Resources.DisplayNameResource.WeekThursday">
+            <summary>
+              Looks up a localized string similar to پنجشنبه.
+            </summary>
+        </member>
+        <member name="P:AtEase.Resources.DisplayNameResource.WeekTuesday">
+            <summary>
+              Looks up a localized string similar to سه شنبه.
+            </summary>
+        </member>
+        <member name="P:AtEase.Resources.DisplayNameResource.WeekWednesday">
+            <summary>
+              Looks up a localized string similar to چهارشنبه.
+            </summary>
+        </member>
+        <member name="T:AtEase.Resources.ErrorMessageResource">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:AtEase.Resources.ErrorMessageResource.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:AtEase.Resources.ErrorMessageResource.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="P:AtEase.Resources.ErrorMessageResource.ArgumentError">
+            <summary>
+              Looks up a localized string similar to مقدار وارد شده معتبر نمی باشد..
+            </summary>
+        </member>
+        <member name="P:AtEase.Resources.ErrorMessageResource.ArgumentNullError">
+            <summary>
+              Looks up a localized string similar to مقدار  وارد نشده است..
+            </summary>
+        </member>
+        <member name="P:AtEase.Resources.ErrorMessageResource.ArgumentOutOfRangeError">
+            <summary>
+              Looks up a localized string similar to مقدار وارد شده در محدوده مجاز نیست..
+            </summary>
+        </member>
+        <member name="P:AtEase.Resources.ErrorMessageResource.GreaterThanZero">
+            <summary>
+              Looks up a localized string similar to مقدار وارد شده باید بزرگتر از صفر باشد..
+            </summary>
+        </member>
+        <member name="P:AtEase.Resources.ErrorMessageResource.InvalidSeatsError">
+            <summary>
+              Looks up a localized string similar to خطا در مقادیر صندلی ها.
+            </summary>
+        </member>
+        <member name="P:AtEase.Resources.ErrorMessageResource.MinLength">
+            <summary>
+              Looks up a localized string similar to حداقل {1} آیتم باید وارد شود..
+            </summary>
+        </member>
+        <member name="P:AtEase.Resources.ErrorMessageResource.ObjectNotFoundError">
+            <summary>
+              Looks up a localized string similar to مقدا {0} برای شناسه {0} یافت نشد..
+            </summary>
+        </member>
+        <member name="P:AtEase.Resources.ErrorMessageResource.ObjectNotInsertedToDatabase">
+            <summary>
+              Looks up a localized string similar to مقادیر وارد شده در پایگاه داده وارد نشد..
+            </summary>
+        </member>
+        <member name="P:AtEase.Resources.ErrorMessageResource.PostalCodeLengthError">
+            <summary>
+              Looks up a localized string similar to کد پستی باید 10 کاراکتر عددی باشد..
+            </summary>
+        </member>
+        <member name="P:AtEase.Resources.ErrorMessageResource.Required">
+            <summary>
+              Looks up a localized string similar to لطفا {0} را وارد نمایید..
+            </summary>
+        </member>
+        <member name="P:AtEase.Resources.ErrorMessageResource.ShamsiYearIsNotValid">
+            <summary>
+              Looks up a localized string similar to سال شمسی معتبر نمیباشد..
+            </summary>
+        </member>
+    </members>
+</doc>

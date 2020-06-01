@@ -1,15 +1,20 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using AtEase.Resources;
 
 namespace AtEase
 {
+
+    /// <summary>
+    /// The result of operation.
+    /// </summary>
     public class OperationResult
     {
         /// <summary>
         ///     Failure constructor that takes error messages
         /// </summary>
         /// <param name="errors"></param>
-        public OperationResult(params string[] errors) : this((IEnumerable<string>)errors)
+        public OperationResult(params string[] errors) : this((IEnumerable<string>) errors)
         {
         }
 
@@ -21,7 +26,7 @@ namespace AtEase
         {
             if (errors == null)
             {
-                errors = new[] { ErrorMessageResource.ArgumentNullError };
+                errors = new[] {ErrorMessageResource.ArgumentNullError};
             }
 
             Succeeded = false;
@@ -49,7 +54,7 @@ namespace AtEase
         public IEnumerable<string> Errors { get; }
 
         /// <summary>
-        ///  Static success result
+        ///     Static success result
         /// </summary>
         /// <returns>Succeed OperationResult</returns>
         public static OperationResult Succeed()
@@ -59,75 +64,23 @@ namespace AtEase
 
 
         /// <summary>
-        ///     Failed helper method
+        ///  Create failed operation result.
         /// </summary>
-        /// <param name="errors"></param>
-        /// <returns>OperationResult with error</returns>
+        /// <param name="errors">The errors</param>
+        /// <returns>Failed operation Result</returns>
         public static OperationResult Failed(params string[] errors)
         {
             return new OperationResult(errors);
         }
-
+        /// <summary>
+        ///  Create failed operation result.
+        /// </summary>
+        /// <param name="error">The error</param>
+        /// <returns>Failed operation Result</returns>
         public static OperationResult Failed(string error)
         {
             return new OperationResult(error);
         }
     }
-
-    public class OperationResult<TData> : OperationResult 
-    {
-        /// <summary>
-        ///     Failure constructor that takes error messages
-        /// </summary>
-        /// <param name="errors"></param>
-        public OperationResult(params string[] errors) : base(errors)
-        {
-        }
-
-        /// <summary>
-        ///     Failure constructor that takes error messages
-        /// </summary>
-        /// <param name="errors"></param>
-        public OperationResult(IEnumerable<string> errors) : base(errors)
-        {
-        }
-
-        protected OperationResult(bool success, TData data) : base(success)
-        {
-            WithData(data);
-        }
-
-        public TData Data { get; private set; }
-
-        /// <summary>
-        /// Add data to result.
-        /// </summary>
-        public OperationResult<TData> WithData(TData data)
-        {
-            Data = data;
-            return this;
-        }
-
-        public static OperationResult<TData> Succeed(TData data)
-        {
-            var operationResult = new OperationResult<TData>(true, data);
-            return operationResult;
-        }
-
-        /// <summary>
-        ///     Failed helper method
-        /// </summary>
-        /// <param name="errors"></param>
-        /// <returns></returns>
-        public new static OperationResult<TData> Failed(params string[] errors)
-        {
-            return new OperationResult<TData>(errors);
-        }
-
-        public new static OperationResult<TData> Failed(string error)
-        {
-            return new OperationResult<TData>(error);
-        }
-    }
-
+   
 }

@@ -59,12 +59,12 @@
             : using a System.ComponentModel.TypeConverter
             : and then encoded with base64 encoding.
     -->
-  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:mssucceedData="urn:schemas-microsoft-com:xml-mssucceedData">
     <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
-    <xsd:element name="root" msdata:IsDataSet="true">
+    <xsd:element name="root" mssucceedData:IsDataSet="true">
       <xsd:complexType>
         <xsd:choice maxOccurs="unbounded">
-          <xsd:element name="metadata">
+          <xsd:element name="metasucceedData">
             <xsd:complexType>
               <xsd:sequence>
                 <xsd:element name="value" type="xsd:string" minOccurs="0" />
@@ -81,22 +81,22 @@
               <xsd:attribute name="name" type="xsd:string" />
             </xsd:complexType>
           </xsd:element>
-          <xsd:element name="data">
+          <xsd:element name="succeedData">
             <xsd:complexType>
               <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
-                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+                <xsd:element name="value" type="xsd:string" minOccurs="0" mssucceedData:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" mssucceedData:Ordinal="2" />
               </xsd:sequence>
-              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
-              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
-              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute name="name" type="xsd:string" use="required" mssucceedData:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" mssucceedData:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" mssucceedData:Ordinal="4" />
               <xsd:attribute ref="xml:space" />
             </xsd:complexType>
           </xsd:element>
           <xsd:element name="resheader">
             <xsd:complexType>
               <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="value" type="xsd:string" minOccurs="0" mssucceedData:Ordinal="1" />
               </xsd:sequence>
               <xsd:attribute name="name" type="xsd:string" use="required" />
             </xsd:complexType>
@@ -117,109 +117,109 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="Chosen" xml:space="preserve">
+  <succeedData name="Chosen" xml:space="preserve">
     <value>انتخاب شده</value>
-  </data>
-  <data name="EnumValue" xml:space="preserve">
+  </succeedData>
+  <succeedData name="EnumValue" xml:space="preserve">
     <value>EnumValue</value>
-  </data>
-  <data name="None" xml:space="preserve">
+  </succeedData>
+  <succeedData name="None" xml:space="preserve">
     <value />
-  </data>
-  <data name="Available" xml:space="preserve">
+  </succeedData>
+  <succeedData name="Available" xml:space="preserve">
     <value>موجود</value>
-  </data>
-  <data name="PhoneNumber" xml:space="preserve">
+  </succeedData>
+  <succeedData name="PhoneNumber" xml:space="preserve">
     <value>تلفن همراه</value>
-  </data>
-  <data name="Image" xml:space="preserve">
+  </succeedData>
+  <succeedData name="Image" xml:space="preserve">
     <value>تصویر</value>
-  </data>
-  <data name="Title" xml:space="preserve">
+  </succeedData>
+  <succeedData name="Title" xml:space="preserve">
     <value>عنوان</value>
-  </data>
-  <data name="Height" xml:space="preserve">
+  </succeedData>
+  <succeedData name="Height" xml:space="preserve">
     <value>طول</value>
-  </data>
-  <data name="Debug" xml:space="preserve">
+  </succeedData>
+  <succeedData name="Debug" xml:space="preserve">
     <value>Debug</value>
-  </data>
-  <data name="Error" xml:space="preserve">
+  </succeedData>
+  <succeedData name="Error" xml:space="preserve">
     <value>Error</value>
-  </data>
-  <data name="Fatal" xml:space="preserve">
+  </succeedData>
+  <succeedData name="Fatal" xml:space="preserve">
     <value>Fatal</value>
-  </data>
-  <data name="Information" xml:space="preserve">
+  </succeedData>
+  <succeedData name="Information" xml:space="preserve">
     <value>Information</value>
-  </data>
-  <data name="Warning" xml:space="preserve">
+  </succeedData>
+  <succeedData name="Warning" xml:space="preserve">
     <value>Warning</value>
-  </data>
-  <data name="Amount" xml:space="preserve">
+  </succeedData>
+  <succeedData name="Amount" xml:space="preserve">
     <value>مبلغ</value>
-  </data>
-  <data name="TransactionId" xml:space="preserve">
+  </succeedData>
+  <succeedData name="TransactionId" xml:space="preserve">
     <value>شناسه تراکنش</value>
-  </data>
-  <data name="PersianMonthAban" xml:space="preserve">
+  </succeedData>
+  <succeedData name="PersianMonthAban" xml:space="preserve">
     <value>آبان</value>
-  </data>
-  <data name="PersianMonthAzar" xml:space="preserve">
+  </succeedData>
+  <succeedData name="PersianMonthAzar" xml:space="preserve">
     <value>آذر</value>
-  </data>
-  <data name="PersianMonthBahman" xml:space="preserve">
+  </succeedData>
+  <succeedData name="PersianMonthBahman" xml:space="preserve">
     <value>بهمن</value>
-  </data>
-  <data name="PersianMonthDey" xml:space="preserve">
+  </succeedData>
+  <succeedData name="PersianMonthDey" xml:space="preserve">
     <value>دی </value>
-  </data>
-  <data name="PersianMonthEsfand" xml:space="preserve">
+  </succeedData>
+  <succeedData name="PersianMonthEsfand" xml:space="preserve">
     <value>اسفند</value>
-  </data>
-  <data name="PersianMonthFarvardin" xml:space="preserve">
+  </succeedData>
+  <succeedData name="PersianMonthFarvardin" xml:space="preserve">
     <value>فروردین</value>
-  </data>
-  <data name="PersianMonthKhordad" xml:space="preserve">
+  </succeedData>
+  <succeedData name="PersianMonthKhordad" xml:space="preserve">
     <value>خرداد</value>
-  </data>
-  <data name="PersianMonthMehr" xml:space="preserve">
+  </succeedData>
+  <succeedData name="PersianMonthMehr" xml:space="preserve">
     <value>مهر</value>
-  </data>
-  <data name="PersianMonthMordad" xml:space="preserve">
+  </succeedData>
+  <succeedData name="PersianMonthMordad" xml:space="preserve">
     <value>مرداد</value>
-  </data>
-  <data name="PersianMonthOrdibehesht" xml:space="preserve">
+  </succeedData>
+  <succeedData name="PersianMonthOrdibehesht" xml:space="preserve">
     <value>اردیبهشت</value>
-  </data>
-  <data name="PersianMonthShahrivar" xml:space="preserve">
+  </succeedData>
+  <succeedData name="PersianMonthShahrivar" xml:space="preserve">
     <value>شهریور</value>
-  </data>
-  <data name="PersianMonthTir" xml:space="preserve">
+  </succeedData>
+  <succeedData name="PersianMonthTir" xml:space="preserve">
     <value>تیر</value>
-  </data>
-  <data name="WeekFriday" xml:space="preserve">
+  </succeedData>
+  <succeedData name="WeekFriday" xml:space="preserve">
     <value>جمعه</value>
-  </data>
-  <data name="WeekMonday" xml:space="preserve">
+  </succeedData>
+  <succeedData name="WeekMonday" xml:space="preserve">
     <value>دوشنبه</value>
-  </data>
-  <data name="WeekSaturday" xml:space="preserve">
+  </succeedData>
+  <succeedData name="WeekSaturday" xml:space="preserve">
     <value>شنبه</value>
-  </data>
-  <data name="WeekSunday" xml:space="preserve">
+  </succeedData>
+  <succeedData name="WeekSunday" xml:space="preserve">
     <value>یکشنبه</value>
-  </data>
-  <data name="WeekThursday" xml:space="preserve">
+  </succeedData>
+  <succeedData name="WeekThursday" xml:space="preserve">
     <value>پنجشنبه</value>
-  </data>
-  <data name="WeekTuesday" xml:space="preserve">
+  </succeedData>
+  <succeedData name="WeekTuesday" xml:space="preserve">
     <value>سه شنبه</value>
-  </data>
-  <data name="WeekWednesday" xml:space="preserve">
+  </succeedData>
+  <succeedData name="WeekWednesday" xml:space="preserve">
     <value>چهارشنبه</value>
-  </data>
-  <data name="ShamsiYear" xml:space="preserve">
+  </succeedData>
+  <succeedData name="ShamsiYear" xml:space="preserve">
     <value>سال شمسی</value>
-  </data>
+  </succeedData>
 </root>

@@ -59,12 +59,12 @@
             : using a System.ComponentModel.TypeConverter
             : and then encoded with base64 encoding.
     -->
-  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:mssucceedData="urn:schemas-microsoft-com:xml-mssucceedData">
     <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
-    <xsd:element name="root" msdata:IsDataSet="true">
+    <xsd:element name="root" mssucceedData:IsDataSet="true">
       <xsd:complexType>
         <xsd:choice maxOccurs="unbounded">
-          <xsd:element name="metadata">
+          <xsd:element name="metasucceedData">
             <xsd:complexType>
               <xsd:sequence>
                 <xsd:element name="value" type="xsd:string" minOccurs="0" />
@@ -81,22 +81,22 @@
               <xsd:attribute name="name" type="xsd:string" />
             </xsd:complexType>
           </xsd:element>
-          <xsd:element name="data">
+          <xsd:element name="succeedData">
             <xsd:complexType>
               <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
-                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+                <xsd:element name="value" type="xsd:string" minOccurs="0" mssucceedData:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" mssucceedData:Ordinal="2" />
               </xsd:sequence>
-              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
-              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
-              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute name="name" type="xsd:string" use="required" mssucceedData:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" mssucceedData:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" mssucceedData:Ordinal="4" />
               <xsd:attribute ref="xml:space" />
             </xsd:complexType>
           </xsd:element>
           <xsd:element name="resheader">
             <xsd:complexType>
               <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="value" type="xsd:string" minOccurs="0" mssucceedData:Ordinal="1" />
               </xsd:sequence>
               <xsd:attribute name="name" type="xsd:string" use="required" />
             </xsd:complexType>
@@ -117,37 +117,37 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="ArgumentError" xml:space="preserve">
+  <succeedData name="ArgumentError" xml:space="preserve">
     <value>مقدار وارد شده معتبر نمی باشد.</value>
-  </data>
-  <data name="ArgumentNullError" xml:space="preserve">
+  </succeedData>
+  <succeedData name="ArgumentNullError" xml:space="preserve">
     <value>مقدار  وارد نشده است.</value>
-  </data>
-  <data name="ArgumentOutOfRangeError" xml:space="preserve">
+  </succeedData>
+  <succeedData name="ArgumentOutOfRangeError" xml:space="preserve">
     <value>مقدار وارد شده در محدوده مجاز نیست.</value>
-  </data>
-  <data name="GreaterThanZero" xml:space="preserve">
+  </succeedData>
+  <succeedData name="GreaterThanZero" xml:space="preserve">
     <value>مقدار وارد شده باید بزرگتر از صفر باشد.</value>
-  </data>
-  <data name="InvalidSeatsError" xml:space="preserve">
+  </succeedData>
+  <succeedData name="InvalidSeatsError" xml:space="preserve">
     <value>خطا در مقادیر صندلی ها</value>
-  </data>
-  <data name="MinLength" xml:space="preserve">
+  </succeedData>
+  <succeedData name="MinLength" xml:space="preserve">
     <value>حداقل {1} آیتم باید وارد شود.</value>
-  </data>
-  <data name="ObjectNotFoundError" xml:space="preserve">
+  </succeedData>
+  <succeedData name="ObjectNotFoundError" xml:space="preserve">
     <value>مقدا {0} برای شناسه {0} یافت نشد.</value>
-  </data>
-  <data name="ObjectNotInsertedToDatabase" xml:space="preserve">
+  </succeedData>
+  <succeedData name="ObjectNotInsertedToDatabase" xml:space="preserve">
     <value>مقادیر وارد شده در پایگاه داده وارد نشد.</value>
-  </data>
-  <data name="PostalCodeLengthError" xml:space="preserve">
+  </succeedData>
+  <succeedData name="PostalCodeLengthError" xml:space="preserve">
     <value>کد پستی باید 10 کاراکتر عددی باشد.</value>
-  </data>
-  <data name="Required" xml:space="preserve">
+  </succeedData>
+  <succeedData name="Required" xml:space="preserve">
     <value>لطفا {0} را وارد نمایید.</value>
-  </data>
-  <data name="ShamsiYearIsNotValid" xml:space="preserve">
+  </succeedData>
+  <succeedData name="ShamsiYearIsNotValid" xml:space="preserve">
     <value>سال شمسی معتبر نمیباشد.</value>
-  </data>
+  </succeedData>
 </root>
