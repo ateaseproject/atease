@@ -111,12 +111,28 @@
   - [Errors](#P-AtEase-OperationResult-Errors 'AtEase.OperationResult.Errors')
   - [Succeeded](#P-AtEase-OperationResult-Succeeded 'AtEase.OperationResult.Succeeded')
   - [Failed(errors)](#M-AtEase-OperationResult-Failed-System-String[]- 'AtEase.OperationResult.Failed(System.String[])')
+  - [Failed(error)](#M-AtEase-OperationResult-Failed-System-String- 'AtEase.OperationResult.Failed(System.String)')
   - [Succeed()](#M-AtEase-OperationResult-Succeed 'AtEase.OperationResult.Succeed')
 - [OperationResult\`1](#T-AtEase-OperationResult`1 'AtEase.OperationResult`1')
   - [#ctor(errors)](#M-AtEase-OperationResult`1-#ctor-System-String[]- 'AtEase.OperationResult`1.#ctor(System.String[])')
   - [#ctor(errors)](#M-AtEase-OperationResult`1-#ctor-System-Collections-Generic-IEnumerable{System-String}- 'AtEase.OperationResult`1.#ctor(System.Collections.Generic.IEnumerable{System.String})')
+  - [#ctor(data)](#M-AtEase-OperationResult`1-#ctor-`0- 'AtEase.OperationResult`1.#ctor(`0)')
+  - [Data](#P-AtEase-OperationResult`1-Data 'AtEase.OperationResult`1.Data')
+  - [SucceedData](#P-AtEase-OperationResult`1-SucceedData 'AtEase.OperationResult`1.SucceedData')
   - [Failed(errors)](#M-AtEase-OperationResult`1-Failed-System-String[]- 'AtEase.OperationResult`1.Failed(System.String[])')
+  - [Failed(error)](#M-AtEase-OperationResult`1-Failed-System-String- 'AtEase.OperationResult`1.Failed(System.String)')
+  - [Succeed(succeedData)](#M-AtEase-OperationResult`1-Succeed-`0- 'AtEase.OperationResult`1.Succeed(`0)')
   - [WithData()](#M-AtEase-OperationResult`1-WithData-`0- 'AtEase.OperationResult`1.WithData(`0)')
+  - [WithSucceedData(succeedData)](#M-AtEase-OperationResult`1-WithSucceedData-`0- 'AtEase.OperationResult`1.WithSucceedData(`0)')
+- [OperationResult\`2](#T-AtEase-OperationResult`2 'AtEase.OperationResult`2')
+  - [#ctor()](#M-AtEase-OperationResult`2-#ctor-`1,System-String[]- 'AtEase.OperationResult`2.#ctor(`1,System.String[])')
+  - [#ctor()](#M-AtEase-OperationResult`2-#ctor-`1,System-Collections-Generic-IEnumerable{System-String}- 'AtEase.OperationResult`2.#ctor(`1,System.Collections.Generic.IEnumerable{System.String})')
+  - [#ctor()](#M-AtEase-OperationResult`2-#ctor-`0- 'AtEase.OperationResult`2.#ctor(`0)')
+  - [FailedData](#P-AtEase-OperationResult`2-FailedData 'AtEase.OperationResult`2.FailedData')
+  - [Failed(failedData,errors)](#M-AtEase-OperationResult`2-Failed-`1,System-String[]- 'AtEase.OperationResult`2.Failed(`1,System.String[])')
+  - [Failed(failedData,error)](#M-AtEase-OperationResult`2-Failed-`1,System-String- 'AtEase.OperationResult`2.Failed(`1,System.String)')
+  - [Succeed(succeedData)](#M-AtEase-OperationResult`2-Succeed-`0- 'AtEase.OperationResult`2.Succeed(`0)')
+  - [WithFailedData(failedData)](#M-AtEase-OperationResult`2-WithFailedData-`1- 'AtEase.OperationResult`2.WithFailedData(`1)')
 
 <a name='T-AtEase-Extensions-ArrayExtensions'></a>
 ## ArrayExtensions `type`
@@ -1113,6 +1129,10 @@ This method has no parameters.
 
 AtEase
 
+##### Summary
+
+The result of operation.
+
 <a name='M-AtEase-OperationResult-#ctor-System-String[]-'></a>
 ### #ctor(errors) `constructor`
 
@@ -1171,17 +1191,34 @@ True if the operation was successful
 
 ##### Summary
 
-Failed helper method
+Create failed operation result.
 
 ##### Returns
 
-OperationResult with error
+Failed operation Result
 
 ##### Parameters
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| errors | [System.String[]](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String[] 'System.String[]') |  |
+| errors | [System.String[]](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String[] 'System.String[]') | The errors |
+
+<a name='M-AtEase-OperationResult-Failed-System-String-'></a>
+### Failed(error) `method`
+
+##### Summary
+
+Create failed operation result.
+
+##### Returns
+
+Failed operation Result
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| error | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | The error |
 
 <a name='M-AtEase-OperationResult-Succeed'></a>
 ### Succeed() `method`
@@ -1205,48 +1242,119 @@ This method has no parameters.
 
 AtEase
 
+##### Summary
+
+The result of operation that can have success data.
+
+##### Generic Types
+
+| Name | Description |
+| ---- | ----------- |
+| TSucceedData | Type of succeed data |
+
 <a name='M-AtEase-OperationResult`1-#ctor-System-String[]-'></a>
 ### #ctor(errors) `constructor`
 
 ##### Summary
 
-Failure constructor that takes error messages
+Failure constructor that takes error messages.
 
 ##### Parameters
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| errors | [System.String[]](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String[] 'System.String[]') |  |
+| errors | [System.String[]](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String[] 'System.String[]') | The errors |
 
 <a name='M-AtEase-OperationResult`1-#ctor-System-Collections-Generic-IEnumerable{System-String}-'></a>
 ### #ctor(errors) `constructor`
 
 ##### Summary
 
-Failure constructor that takes error messages
+Failure constructor that takes error messages.
 
 ##### Parameters
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| errors | [System.Collections.Generic.IEnumerable{System.String}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Collections.Generic.IEnumerable 'System.Collections.Generic.IEnumerable{System.String}') |  |
+| errors | [System.Collections.Generic.IEnumerable{System.String}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Collections.Generic.IEnumerable 'System.Collections.Generic.IEnumerable{System.String}') | The Errors |
+
+<a name='M-AtEase-OperationResult`1-#ctor-`0-'></a>
+### #ctor(data) `constructor`
+
+##### Summary
+
+Succeed constructor that takes success data.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| data | [\`0](#T-`0 '`0') |  |
+
+<a name='P-AtEase-OperationResult`1-Data'></a>
+### Data `property`
+
+##### Summary
+
+The succeed data.
+
+<a name='P-AtEase-OperationResult`1-SucceedData'></a>
+### SucceedData `property`
+
+##### Summary
+
+The succeed data.
 
 <a name='M-AtEase-OperationResult`1-Failed-System-String[]-'></a>
 ### Failed(errors) `method`
 
 ##### Summary
 
-Failed helper method
+Create failed operation result.
 
 ##### Returns
 
-
+Failed operation Result
 
 ##### Parameters
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| errors | [System.String[]](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String[] 'System.String[]') |  |
+| errors | [System.String[]](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String[] 'System.String[]') | The errors |
+
+<a name='M-AtEase-OperationResult`1-Failed-System-String-'></a>
+### Failed(error) `method`
+
+##### Summary
+
+Create failed operation result.
+
+##### Returns
+
+Failed operation Result
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| error | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | The error |
+
+<a name='M-AtEase-OperationResult`1-Succeed-`0-'></a>
+### Succeed(succeedData) `method`
+
+##### Summary
+
+Create succeed operation result.
+
+##### Returns
+
+Succeed operation result
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| succeedData | [\`0](#T-`0 '`0') | Success data |
 
 <a name='M-AtEase-OperationResult`1-WithData-`0-'></a>
 ### WithData() `method`
@@ -1258,3 +1366,148 @@ Add data to result.
 ##### Parameters
 
 This method has no parameters.
+
+<a name='M-AtEase-OperationResult`1-WithSucceedData-`0-'></a>
+### WithSucceedData(succeedData) `method`
+
+##### Summary
+
+Adding success data after creation to the operation result.
+
+##### Returns
+
+This class as the operation result
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| succeedData | [\`0](#T-`0 '`0') |  |
+
+<a name='T-AtEase-OperationResult`2'></a>
+## OperationResult\`2 `type`
+
+##### Namespace
+
+AtEase
+
+##### Summary
+
+The result of operation that can have two type of data(success and fail).
+
+##### Generic Types
+
+| Name | Description |
+| ---- | ----------- |
+| TSucceedData | Type of succeed data |
+| TFailedData | Type of failed data |
+
+<a name='M-AtEase-OperationResult`2-#ctor-`1,System-String[]-'></a>
+### #ctor() `constructor`
+
+##### Summary
+
+*Inherit from parent.*
+
+##### Parameters
+
+This constructor has no parameters.
+
+<a name='M-AtEase-OperationResult`2-#ctor-`1,System-Collections-Generic-IEnumerable{System-String}-'></a>
+### #ctor() `constructor`
+
+##### Summary
+
+*Inherit from parent.*
+
+##### Parameters
+
+This constructor has no parameters.
+
+<a name='M-AtEase-OperationResult`2-#ctor-`0-'></a>
+### #ctor() `constructor`
+
+##### Summary
+
+*Inherit from parent.*
+
+##### Parameters
+
+This constructor has no parameters.
+
+<a name='P-AtEase-OperationResult`2-FailedData'></a>
+### FailedData `property`
+
+##### Summary
+
+The failed data.
+
+<a name='M-AtEase-OperationResult`2-Failed-`1,System-String[]-'></a>
+### Failed(failedData,errors) `method`
+
+##### Summary
+
+Create failed operation result.
+
+##### Returns
+
+Failed operation Result
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| failedData | [\`1](#T-`1 '`1') | Failed data |
+| errors | [System.String[]](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String[] 'System.String[]') | The errors |
+
+<a name='M-AtEase-OperationResult`2-Failed-`1,System-String-'></a>
+### Failed(failedData,error) `method`
+
+##### Summary
+
+Create failed operation result.
+
+##### Returns
+
+Failed operation Result
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| failedData | [\`1](#T-`1 '`1') | Failed data |
+| error | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | The error |
+
+<a name='M-AtEase-OperationResult`2-Succeed-`0-'></a>
+### Succeed(succeedData) `method`
+
+##### Summary
+
+Create succeed operation result.
+
+##### Returns
+
+succeeded operation result
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| succeedData | [\`0](#T-`0 '`0') | succeed data |
+
+<a name='M-AtEase-OperationResult`2-WithFailedData-`1-'></a>
+### WithFailedData(failedData) `method`
+
+##### Summary
+
+Adding fail data after creation to the operation result.
+
+##### Returns
+
+Operation result
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| failedData | [\`1](#T-`1 '`1') | Failed data |

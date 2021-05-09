@@ -257,6 +257,11 @@
                 Returns a new <see cref="T:System.TimeSpan"></see> object represented by <paramref name="number" /> as <c>Weeks</c>.
             </summary>
         </member>
+        <member name="T:AtEase.OperationResult">
+            <summary>
+            The result of operation.
+            </summary>
+        </member>
         <member name="M:AtEase.OperationResult.#ctor(System.String[])">
             <summary>
                 Failure constructor that takes error messages
@@ -287,40 +292,141 @@
         </member>
         <member name="M:AtEase.OperationResult.Succeed">
             <summary>
-             Static success result
+                Static success result
             </summary>
             <returns>Succeed OperationResult</returns>
         </member>
         <member name="M:AtEase.OperationResult.Failed(System.String[])">
             <summary>
-                Failed helper method
+             Create failed operation result.
             </summary>
-            <param name="errors"></param>
-            <returns>OperationResult with error</returns>
+            <param name="errors">The errors</param>
+            <returns>Failed operation Result</returns>
+        </member>
+        <member name="M:AtEase.OperationResult.Failed(System.String)">
+            <summary>
+             Create failed operation result.
+            </summary>
+            <param name="error">The error</param>
+            <returns>Failed operation Result</returns>
+        </member>
+        <member name="T:AtEase.OperationResult`1">
+            <summary>
+            The result of operation that can have success data.
+            </summary>
+            <typeparam name="TSucceedData">Type of succeed data</typeparam>
         </member>
         <member name="M:AtEase.OperationResult`1.#ctor(System.String[])">
             <summary>
-                Failure constructor that takes error messages
+                Failure constructor that takes error messages.
             </summary>
-            <param name="errors"></param>
+            <param name="errors">The errors</param>
         </member>
         <member name="M:AtEase.OperationResult`1.#ctor(System.Collections.Generic.IEnumerable{System.String})">
             <summary>
-                Failure constructor that takes error messages
+                Failure constructor that takes error messages.
             </summary>
-            <param name="errors"></param>
+            <param name="errors">The Errors</param>
+        </member>
+        <member name="M:AtEase.OperationResult`1.#ctor(`0)">
+            <summary>
+              Succeed constructor that takes success data.
+            </summary>
+            <param name="data"></param>
+        </member>
+        <member name="P:AtEase.OperationResult`1.Data">
+            <summary>
+            The succeed data.
+            </summary>
+        </member>
+        <member name="P:AtEase.OperationResult`1.SucceedData">
+            <summary>
+            The succeed data.
+            </summary>
         </member>
         <member name="M:AtEase.OperationResult`1.WithData(`0)">
             <summary>
-            Add succeedData to result.
+                Add data to result.
             </summary>
+        </member>
+        <member name="M:AtEase.OperationResult`1.WithSucceedData(`0)">
+            <summary>
+            Adding success data after creation to the operation result.
+            </summary>
+            <param name="succeedData"></param>
+            <returns>This class as the operation result</returns>
+        </member>
+        <member name="M:AtEase.OperationResult`1.Succeed(`0)">
+            <summary>
+             Create succeed operation result.
+            </summary>
+            <param name="succeedData">Success data</param>
+            <returns>Succeed operation result</returns>
         </member>
         <member name="M:AtEase.OperationResult`1.Failed(System.String[])">
             <summary>
-                Failed helper method
+             Create failed operation result.
             </summary>
-            <param name="errors"></param>
-            <returns></returns>
+            <param name="errors">The errors</param>
+            <returns>Failed operation Result</returns>
+        </member>
+        <member name="M:AtEase.OperationResult`1.Failed(System.String)">
+            <summary>
+             Create failed operation result.
+            </summary>
+            <param name="error">The error</param>
+            <returns>Failed operation Result</returns>
+        </member>
+        <member name="T:AtEase.OperationResult`2">
+            <summary>
+            The result of operation that can have two type of data(success and fail).
+            </summary>
+            <typeparam name="TSucceedData">Type of succeed data</typeparam>
+            <typeparam name="TFailedData">Type of failed data</typeparam>
+        </member>
+        <member name="M:AtEase.OperationResult`2.#ctor(`1,System.String[])">
+            <inheritdoc />
+        </member>
+        <member name="M:AtEase.OperationResult`2.#ctor(`1,System.Collections.Generic.IEnumerable{System.String})">
+            <inheritdoc />
+        </member>
+        <member name="M:AtEase.OperationResult`2.WithFailedData(`1)">
+            <summary>
+            Adding fail data after creation to the operation result.
+            </summary>
+            <param name="failedData">Failed data</param>
+            <returns>Operation result</returns>
+        </member>
+        <member name="M:AtEase.OperationResult`2.#ctor(`0)">
+            <inheritdoc />
+        </member>
+        <member name="M:AtEase.OperationResult`2.Succeed(`0)">
+            <summary>
+            Create succeed operation result.
+            </summary>
+            <param name="succeedData">succeed data</param>
+            <returns>succeeded operation result</returns>
+        </member>
+        <member name="P:AtEase.OperationResult`2.FailedData">
+            <summary>
+            The failed data.
+            </summary>
+        </member>
+        <member name="M:AtEase.OperationResult`2.Failed(`1,System.String[])">
+            <summary>
+            Create failed operation result.
+            </summary>
+            <param name="failedData">Failed data</param>
+            <param name="errors">The errors</param>
+            <returns>Failed operation Result</returns>
+        </member>
+        <member name="M:AtEase.OperationResult`2.Failed(`1,System.String)">
+            <summary>
+            Create failed operation result.
+            </summary>
+            <param name="failedData">Failed data</param>
+            <param name="error">The error</param>
+            <returns>Failed operation Result</returns>
         </member>
         <member name="T:AtEase.Resources.DisplayNameResource">
             <summary>

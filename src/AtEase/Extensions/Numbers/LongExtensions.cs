@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Security.Cryptography;
 using System.Text;
 
 namespace AtEase.Extensions.Numbers
@@ -33,5 +34,22 @@ namespace AtEase.Extensions.Numbers
         {
             return !IsEven(value);
         }
+        /// <summary>
+        /// Create random long number
+        /// </summary>
+        /// <returns>Random long number</returns>
+        public static long NextRandom()
+        {
+            using var provider = new RNGCryptoServiceProvider();
+
+            var data = new byte[8];
+
+            provider.GetBytes(data);
+
+            var randomNumber = BitConverter.ToInt64(data, 0);
+
+            return Math.Abs(randomNumber);
+        }
+
     }
 }
