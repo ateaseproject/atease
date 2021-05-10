@@ -25,11 +25,17 @@ namespace AtEase.Extensions.Collections
             return items != null && items.Any();
         }
 
+        /// <summary>
+        ///     Determines whether not any element of a sequence satisfies a condition.
+        /// </summary>
         public static bool NotAny<TSource>(this IEnumerable<TSource> source)
         {
             return !source.Any();
         }
 
+        /// <summary>
+        ///     Determines whether not any element of a sequence satisfies a condition.
+        /// </summary>
         public static bool NotAny<TSource>(this IEnumerable<TSource> source, Func<TSource, bool> predicate)
         {
             return !source.Any(predicate);
