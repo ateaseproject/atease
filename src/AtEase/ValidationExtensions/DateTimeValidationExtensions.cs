@@ -1,4 +1,5 @@
 ﻿using System;
+using AtEase.Extensions;
 using AtEase.Resources;
 
 namespace AtEase.ValidationExtensions
@@ -7,7 +8,7 @@ namespace AtEase.ValidationExtensions
     {
         public static void AssertArgumentIsNotNullOrMinValue(this DateTime time, string name)
         {
-            if (time == null)
+            if (time.IsNull())
             {
                 throw new ArgumentNullException(name, ErrorMessageResource.ArgumentNullError);
             }

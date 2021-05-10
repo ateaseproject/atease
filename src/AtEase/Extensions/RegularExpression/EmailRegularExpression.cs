@@ -25,8 +25,11 @@ namespace AtEase.Extensions.RegularExpression
             try
             {
                 // Normalize the domain
-                email = Regex.Replace(email, @"(@)(.+)$", DomainMapper,
-                    RegexOptions.None, TimeSpan.FromMilliseconds(200));
+                email = Regex.Replace(email,
+                                      @"(@)(.+)$",
+                                      DomainMapper,
+                                      RegexOptions.None,
+                                      TimeSpan.FromMilliseconds(200));
 
                 // Examines the domain part of the email and normalizes it.
                 string DomainMapper(Match match)
@@ -36,25 +39,27 @@ namespace AtEase.Extensions.RegularExpression
 
                     // Pull out and process domain name (throws ArgumentException on invalid)
                     var domainName = idn.GetAscii(match.Groups[2]
-                        .Value);
+                                                       .Value);
 
                     return match.Groups[1]
-                               .Value + domainName;
+                                .Value + domainName;
                 }
             }
-            catch (RegexMatchTimeoutException e)
+            catch (RegexMatchTimeoutException)
             {
                 return false;
             }
-            catch (ArgumentException e)
+            catch (ArgumentException)
             {
                 return false;
             }
 
             try
             {
-                return Regex.IsMatch(email, EmailValidationRegex,
-                    RegexOptions.IgnoreCase, TimeSpan.FromMilliseconds(250));
+                return Regex.IsMatch(email,
+                                     EmailValidationRegex,
+                                     RegexOptions.IgnoreCase,
+                                     TimeSpan.FromMilliseconds(250));
             }
             catch (RegexMatchTimeoutException)
             {
