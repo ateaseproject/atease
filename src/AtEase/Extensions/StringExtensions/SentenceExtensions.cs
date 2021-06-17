@@ -5,6 +5,30 @@ namespace AtEase.Extensions
 {
     public static class SentenceExtensions
     {
+        /// <summary>
+        ///     check the text is one word or not. word should be at least one character
+        /// </summary>
+        /// <param name="text">text</param>
+        /// <returns>is word or not</returns>
+        public static bool IsWord(this string text)
+        {
+            var trimmedText = text.Trim();
+            if (trimmedText.Length == 0)
+            {
+                return false;
+            }
+
+            var index = trimmedText.IndexOf(' ');
+            return index < 0;
+        }
+
+
+        /// <summary>
+        ///     space the text, TheBook should be The Book
+        /// </summary>
+        /// <param name="sentence">concatenated words</param>
+        /// <param name="preserveAcronyms">check acronyms</param>
+        /// <returns>separate words by capital letter</returns>
         public static string ToSpacingSentence(this string sentence, bool preserveAcronyms = true)
         {
             if (sentence.IsNullOrEmptyOrWhiteSpace())
@@ -32,6 +56,12 @@ namespace AtEase.Extensions
             return spacedText.ToString();
         }
 
+        /// <summary>
+        ///     space the text, first letter will be in upper and rest will be lower case, TheBook should be The book
+        /// </summary>
+        /// <param name="sentence">concatenated words</param>
+        /// <param name="preserveAcronyms">check acronyms</param>
+        /// <returns>separate words by capital letter</returns>
         public static string ToSentence(this string sentence, bool preserveAcronyms = true)
         {
             if (sentence.IsNullOrEmptyOrWhiteSpace())
@@ -41,7 +71,50 @@ namespace AtEase.Extensions
 
             var spaced = sentence.ToSpacingSentence(preserveAcronyms).ToLower();
 
-            return spaced.First().ToString().ToUpper() + spaced.Substring(1);
+            return CapitalFirstLetterWithoutCheckForBeingEmpty(spaced);
+        }
+
+
+        /// <summary>
+        ///     convert text to snake case. One Two should be one_two
+        /// </summary>
+        /// <param name="sentence"></param>
+        /// <returns></returns>
+        public static string ToSnakeCase(this string sentence)
+        {
+            if (sentence.IsNullOrEmptyOrWhiteSpace())
+            {
+                return sentence;
+            }
+
+            var spaced = sentence.ToSpacingSentence().ToLower();
+            return spaced.Replace(' ', '_');
+        }
+
+        /// <summary>
+        ///     capital first letter of text
+        /// </summary>
+        /// <param name="text">the text</param>
+        /// <returns>capitalized first letter text</returns>
+        public static string CapitalFirstLetter(this string text)
+        {
+            if (text.IsNullOrEmptyOrWhiteSpace())
+            {
+                return text;
+            }
+
+            return CapitalFirstLetterWithoutCheckForBeingEmpty(text);
+        }
+
+        /// <summary>
+        ///     capital first letter of text without checking for text being empty.
+        ///     if text be an empty text, raise exception
+        /// </summary>
+        /// <param name="text">the text</param>
+        /// <returns>capitalized first letter text</returns>
+        public static string CapitalFirstLetterWithoutCheckForBeingEmpty(this string text)
+        {
+            return text.First().ToString().ToUpper() + text.Substring(1);
         }
     }
 }

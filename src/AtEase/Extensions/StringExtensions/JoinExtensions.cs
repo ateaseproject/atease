@@ -15,6 +15,12 @@ namespace AtEase.Extensions
             return string.Join(separator, values);
         }
 
+        public static string Join<T>(this List<T> values, string separator)
+        {
+            return string.Join(separator, values);
+        }
+
+
         //TODO Implement these
         //public static string Join(this int[] value, char separator)
         //{

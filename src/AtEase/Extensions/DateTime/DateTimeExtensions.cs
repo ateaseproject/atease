@@ -7,6 +7,11 @@ namespace AtEase.Extensions
     {
         private static readonly PersianCalendar PersianCalender = new PersianCalendar();
 
+        /// <summary>
+        /// return gregorian date time
+        /// </summary>
+        /// <param name="date">persian date time</param>
+        /// <returns>gregorian date time</returns>
         public static DateTime ToGregorianDateTime(this string date)
         {
             var datePart = date.Split(' ')[0];
@@ -18,6 +23,12 @@ namespace AtEase.Extensions
             return PersianCalender.ToDateTime(year, month, day, 0, 0, 0, 0);
         }
 
+        /// <summary>
+        /// return persian date time
+        /// </summary>
+        /// <param name="date">the date time</param>
+        /// <param name="format">date time format</param>
+        /// <returns>persian date time</returns>
         public static string ToPersianDateTime(this DateTime date, string format = null)
         {
             var persianDate = new PersianDateTime(date);
