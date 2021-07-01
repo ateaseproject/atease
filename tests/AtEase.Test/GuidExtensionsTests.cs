@@ -20,15 +20,24 @@ namespace AtEase.Test
         [Fact]
         public void Test()
         {
+            _output.WriteLine("\nGeneric:");
+            _output.WriteLine(Guid.NewGuid().AsSequentialGuid().ToString());
+            _output.WriteLine(Guid.NewGuid().AsSequentialGuid().ToString());
+            _output.WriteLine(Guid.NewGuid().AsSequentialGuid().ToString());
+            _output.WriteLine(GuidGeneratorExtensions.NewSequentialGuid().ToString());
+            _output.WriteLine(GuidGeneratorExtensions.NewSequentialGuid().ToString());
+            _output.WriteLine(GuidGeneratorExtensions.NewSequentialGuid().ToString());
+
+
             _output.WriteLine("\nEf:");
             _output.WriteLine(Guid.NewGuid().AsEfSequentialGuid().ToString());
             _output.WriteLine(Guid.NewGuid().AsEfSequentialGuid().ToString());
             _output.WriteLine(Guid.NewGuid().AsEfSequentialGuid().ToString());
-            _output.WriteLine(GuidGeneratorEfExtensions.NewEfCoreSequentialGuid().ToString());
-            _output.WriteLine(GuidGeneratorEfExtensions.NewEfCoreSequentialGuid().ToString());
-            _output.WriteLine(GuidGeneratorEfExtensions.NewEfCoreSequentialGuid().ToString());
+            _output.WriteLine(GuidGeneratorEfExtensions.NewEfSequentialGuid().ToString());
+            _output.WriteLine(GuidGeneratorEfExtensions.NewEfSequentialGuid().ToString());
+            _output.WriteLine(GuidGeneratorEfExtensions.NewEfSequentialGuid().ToString());
 
-            _output.WriteLine("\nComb:\n");
+            _output.WriteLine("\nComb:");
             _output.WriteLine(Guid.NewGuid().AsCombSequentialGuid().ToString());
             _output.WriteLine(Guid.NewGuid().AsCombSequentialGuid().ToString());
             _output.WriteLine(Guid.NewGuid().AsCombSequentialGuid().ToString());

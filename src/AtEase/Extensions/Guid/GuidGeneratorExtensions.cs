@@ -9,7 +9,7 @@ namespace AtEase.Extensions
         /// </summary>
         public static Guid NewSequentialGuid()
         {
-            return GuidGeneratorEfExtensions.NewEfCoreSequentialGuid();
+            return GuidGeneratorEfExtensions.NewEfSequentialGuid();
         }
 
         /// <summary>

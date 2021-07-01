@@ -14,7 +14,7 @@ namespace AtEase.Extensions
         /// <summary>
         ///     Generate a new <see cref="Guid" /> using the Ef structure!
         /// </summary>
-        public static Guid NewEfCoreSequentialGuid()
+        public static Guid NewEfSequentialGuid()
         {
             return Next();
         }
