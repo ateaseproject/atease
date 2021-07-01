@@ -19,7 +19,6 @@ Available for [.NET Standard 2.0+](https://docs.microsoft.com/en-gb/dotnet/stand
 PM> Install-Package AtEase
 ```
 ## Features
- -  
  - Extensions for Collections, Enum, String and other types
  - Persian DateTime extension
  - OperationResult for returning an object that shows succeed or faild operation with data and errors.
