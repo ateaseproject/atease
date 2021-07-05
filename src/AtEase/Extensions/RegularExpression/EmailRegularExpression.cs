@@ -15,6 +15,10 @@ namespace AtEase.Extensions.RegularExpression
         public const string EmailComaSeparatedRegex = "";
 
 
+        /// <summary>
+        ///  Determine email is in valid format or not 
+        /// </summary>
+        /// <param name="email">email</param>
         public static bool IsValidEmail(this string email)
         {
             if (email.IsNullOrEmptyOrWhiteSpace())

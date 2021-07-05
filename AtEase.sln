@@ -11,7 +11,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PersianDateTime.Test", "tes
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AtEase", "src\AtEase\AtEase.csproj", "{5C25E2BA-8A8F-4CB8-912A-DA69728044DE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AtEase.Test", "tests\AtEase.Test\AtEase.Test.csproj", "{4D4FBC30-57BE-430E-A226-13A30E7BCB9C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AtEase.Test", "tests\AtEase.Test\AtEase.Test.csproj", "{4D4FBC30-57BE-430E-A226-13A30E7BCB9C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

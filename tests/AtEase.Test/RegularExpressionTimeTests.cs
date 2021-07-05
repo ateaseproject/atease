@@ -55,7 +55,6 @@ namespace AtEase.Test
         [InlineData("00:00:61")]
         [InlineData("24:00:00")]
         [InlineData("24:00")]
-        [InlineData("")]
         public void time_is_invalid(string time)
         {
             Assert.False(time.IsValidTime());

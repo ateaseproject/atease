@@ -6,7 +6,7 @@ namespace AtEase.Extensions
     public static class SentenceExtensions
     {
         /// <summary>
-        ///     check the text is one word or not. word should be at least one character
+        ///  Check the text is one word or not. word should be at least one character
         /// </summary>
         /// <param name="text">text</param>
         /// <returns>is word or not</returns>
@@ -24,7 +24,7 @@ namespace AtEase.Extensions
 
 
         /// <summary>
-        ///     space the text, TheBook should be The Book
+        ///  Space the text, TheBook should be The Book
         /// </summary>
         /// <param name="sentence">concatenated words</param>
         /// <param name="preserveAcronyms">check acronyms</param>
@@ -57,7 +57,7 @@ namespace AtEase.Extensions
         }
 
         /// <summary>
-        ///     space the text, first letter will be in upper and rest will be lower case, TheBook should be The book
+        ///  Space the text, first letter will be in upper and rest will be lower case, TheBook should be The book
         /// </summary>
         /// <param name="sentence">concatenated words</param>
         /// <param name="preserveAcronyms">check acronyms</param>
@@ -76,7 +76,7 @@ namespace AtEase.Extensions
 
 
         /// <summary>
-        ///     convert text to snake case. One Two should be one_two
+        ///  Convert text to snake case. One Two should be one_two
         /// </summary>
         /// <param name="sentence"></param>
         /// <returns></returns>
