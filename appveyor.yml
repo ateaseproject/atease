@@ -1,5 +1,5 @@
-version: '{build}'
-image: Visual Studio 2017
+version: 1.0.{build}
+image: Visual Studio 2019
 
 init:
   - git config --global core.autocrlf true
@@ -10,16 +10,16 @@ pull_requests:
 environment:
   DOTNET_SKIP_FIRST_TIME_EXPERIENCE: true
   DOTNET_CLI_TELEMETRY_OPTOUT: true
-
+  NUGET_API_KEY:
+    secure: EYLqbLwoGuw7a2bwbdbxYVRnE2GEsHzA8sIRqYmIO6GQw8diJzTs4/zfjVXub04v
 branches:
   only:
     - refs/heads/master
     - refs/tags/*
     - master
-
+configuration: Release
 # clone_depth: 1
 build_script:
-  - ps: .\build\build.ps1  -Script build/build.cake
+  - ps: build/nukebuild/build.ps1 --root . --target PackagePush --NugetApiKey "$NUGET_API_KEY" --NugetApiUrl "https://api.nuget.org/v3/index.json"
 
 test: off
-
