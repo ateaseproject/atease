@@ -24,6 +24,44 @@ PM> Install-Package AtEase
  - OperationResult for returning an object that shows succeed or faild operation with data and errors.
  - Provide DSL for C# methods
 
+### Convert class to Http query string 
+```C#
+testClass.ToQueryString();
+```
+### DateTime 
+```C#
+dateTime.ToPersianDateTime(format);  // تبدیل به تاریخ شمسی
+```
+### Sequential GUID
+```C#
+Guid.NewGuid().AsSequentialGuid();
+GuidGeneratorExtensions.NewSequentialGuid();
+```
+### RegularExpression
+```C#
+string.IsValidShamsiYear(); // تاریخ شمسی است
+string.IsValidTime();
+string.IsValidEmail();
+```
+### String
+```C#
+string.IsWord();
+string.ToSpacingSentence();
+string.ToSentence();
+string.ToSnakeCase();
+string.FixPersianKeyboardLayou(); // فیکس حروفی عربی و فارسی
+string.ToPersianNumber();  // تبدیل اعداد به اعداد فارسی
+string.IsNull();
+string.IsNullOrEmptyOrWhiteSpace();
+```
+### Enum
+```C#
+@enum.ToInt();  // enum to int
+value.AsEnum<TestEnum>(); // int to enum
+@enum.GetDisplayName();
+@enum.GetDescription();
+EnumToList<Enum>; // get list of values
+```
 ### Collections
 ```C#
 collection.IsNullOrEmpty()
