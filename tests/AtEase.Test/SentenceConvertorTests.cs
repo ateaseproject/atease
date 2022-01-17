@@ -20,6 +20,9 @@ namespace AtEase.Test
                 yield return new object[] {"One Two", "One Two"};
                 yield return new object[] {"OneTwo", "One Two"};
                 yield return new object[] {"OneTwoThree", "One Two Three"};
+                yield return new object[] {"FirstSecond3rd", "First Second 3rd"};
+                yield return new object[] {"FirstSecond3rdForth", "First Second 3rd Forth"};
+                yield return new object[] {"FirstSecond3Third", "First Second 3 Third"};
             }
         }
 

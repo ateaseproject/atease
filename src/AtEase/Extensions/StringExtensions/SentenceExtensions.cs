@@ -50,6 +50,15 @@ namespace AtEase.Extensions
                     }
                 }
 
+                if (char.IsDigit(sentence[i]))
+                {
+                    if (sentence[i - 1] != ' ' && !char.IsDigit(sentence[i - 1]) ||
+                        i < sentence.Length - 1 && !char.IsDigit(sentence[i + 1]))
+                    {
+                        spacedText.Append(' ');
+                    }
+                }
+
                 spacedText.Append(sentence[i]);
             }
 
