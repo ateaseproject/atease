@@ -7,6 +7,7 @@
             return value == null;
         }
 
+
         public static bool IsNotNull(this object value)
         {
             return value != null;
