@@ -31,7 +31,10 @@ namespace AtEase.Test
         {
             CustomClass customClass = new CustomClass();
 
-            string attributeValue = customClass.GetType().SingleAttributeValue<CustomAttrAttribute>("SomeProp", "Name");
+            string attributeValue = customClass
+                                   .GetType()
+                                   .SingleAttributeValue<CustomAttrAttribute>(
+                                nameof(customClass.SomeProp), nameof(CustomAttrAttribute.Name));
 
             attributeValue.Should().Be("SomeName");
         }
