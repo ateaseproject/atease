@@ -95,3 +95,10 @@ string.RunAsCmd(workingDirectory)
 string.RunAsWindowsCmd(workingDirectory)
 string.RunAsBashCmd(workingDirectory)
 ```
+### Types
+```C#
+object.GetPropertyValue(propertyName)
+object.GetFieldValue(fieldName)
+object.HasAttribute<CustomAttribute>()
+object.SingleAttributeValue<TAttribute>(propertyName,attributeName)
+```
