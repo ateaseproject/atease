@@ -7,7 +7,6 @@ namespace AtEase.Extensions
 {
     public static class ReflectionExtensions
     {
-        
         [DebuggerStepThrough]
         public static bool HasAttribute<T>(this Type type) where T : Attribute
         {
@@ -46,7 +45,19 @@ namespace AtEase.Extensions
         {
             PropertyInfo[] props = type.GetProperties();
             var prop = props.Single(p => p.Name == propertyName);
-            object attr = prop.GetCustomAttributes(true).Single(a => a.GetType() == typeof(TAttribute));
+            var attr = prop.GetCustomAttributes(true).Single(a => a.GetType() == typeof(TAttribute));
+            return attr.GetFieldValue(attributeName).ToString();
+        }
+
+
+        /// <summary>
+        ///     Get single attribute field value. Note that attribute should be single.
+        /// </summary>
+        [DebuggerStepThrough]
+        public static string SingleAttributeValue<TAttribute>(this PropertyInfo property, string attributeName)
+            where TAttribute : Attribute
+        {
+            var attr = property.GetCustomAttributes(true).Single(a => a.GetType() == typeof(TAttribute));
             return attr.GetFieldValue(attributeName).ToString();
         }
     }
