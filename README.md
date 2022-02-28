@@ -101,4 +101,5 @@ object.GetPropertyValue(propertyName)
 object.GetFieldValue(fieldName)
 object.HasAttribute<CustomAttribute>()
 object.SingleAttributeValue<TAttribute>(propertyName,attributeName)
+propertyInfo.SingleAttributeValue<TAttribute>(attributeName)
 ```
