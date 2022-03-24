@@ -9,7 +9,7 @@
         /// <returns>Returns true if value is 0 or min value.</returns>
         public static bool IsZeroOrMin(this int value)
         {
-            return value == int.MinValue || value == 0;
+            return value is int.MinValue or 0;
         }
         /// <summary>
         /// Indicates the value is even.
