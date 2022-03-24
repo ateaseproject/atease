@@ -3,7 +3,7 @@
     public static class IntExtensions
     {
         /// <summary>
-        /// Indicates the value as int  is 0 or int.MinValue value.
+        /// Indicates the value as int is 0 or int.MinValue value.
         /// </summary>
         /// <param name="value">Int value</param>
         /// <returns>Returns true if value is 0 or min value.</returns>

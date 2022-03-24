@@ -8,7 +8,7 @@ namespace AtEase.Extensions
         private static readonly PersianCalendar PersianCalender = new PersianCalendar();
 
         /// <summary>
-        /// return gregorian date time
+        ///     return gregorian date time
         /// </summary>
         /// <param name="date">persian date time</param>
         /// <returns>gregorian date time</returns>
@@ -24,7 +24,7 @@ namespace AtEase.Extensions
         }
 
         /// <summary>
-        /// return persian date time
+        ///     return persian date time
         /// </summary>
         /// <param name="date">the date time</param>
         /// <param name="format">date time format</param>
@@ -37,23 +37,33 @@ namespace AtEase.Extensions
 
 
         /// <summary>
-        /// Get date time with max value 23:59:59
+        ///     Get date time with max value 23:59:59
         /// </summary>
         /// <param name="date"></param>
         /// <returns></returns>
         public static DateTime AsDayMaxValue(this DateTime date)
         {
-           return new DateTime(date.Year, date.Month, date.Day, 23, 59, 59);
+            return new DateTime(date.Year, date.Month, date.Day, 23, 59, 59);
         }
 
         /// <summary>
-        /// Get date time with zero time 00:00:00
+        ///     Get date time with zero time 00:00:00
         /// </summary>
         /// <param name="date">date time</param>
         /// <returns>date without time</returns>
         public static DateTime AsDayMinValue(this DateTime date)
         {
             return new DateTime(date.Year, date.Month, date.Day, 0, 0, 0);
+        }
+
+        /// <summary>
+        ///     Indicates the value is MinValue value.
+        /// </summary>
+        /// <param name="value">DateTime value</param>
+        /// <returns>Returns true if value is min value.</returns>
+        public static bool IsMinValue(this DateTime value)
+        {
+            return value == DateTime.MinValue;
         }
     }
 }
