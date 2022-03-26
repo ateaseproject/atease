@@ -16,6 +16,17 @@ namespace AtEase.Extensions.Numbers
         }
 
         /// <summary>
+        ///     Indicates the value as long  is 0 or long.MinValue value.
+        /// </summary>
+        /// <param name="value">Long value</param>
+        /// <returns>Returns true if value is 0 or min value.</returns>
+        public static bool IsZeroOrMinValue(this long? value)
+        {
+            return !value.HasValue || IsZeroOrMinValue(value.Value);
+        }
+
+
+        /// <summary>
         ///     Indicates the value as long  is long.MinValue value.
         /// </summary>
         /// <param name="value">Long value</param>
@@ -23,6 +34,36 @@ namespace AtEase.Extensions.Numbers
         public static bool IsMinValue(this long value)
         {
             return value == long.MinValue;
+        }
+
+        /// <summary>
+        ///     Indicates the value as long  is long.MinValue value.
+        /// </summary>
+        /// <param name="value">Long value</param>
+        /// <returns>Returns true if value is min value.</returns>
+        public static bool IsMinValue(this long? value)
+        {
+            return !value.HasValue || IsMinValue(value.Value);
+        }
+
+        /// <summary>
+        ///     Indicates the value as decimal is less than int.MinValue value.
+        /// </summary>
+        /// <param name="value">Long value</param>
+        /// <returns>Returns true if value is less than int min value.</returns>
+        public static bool IsLessOrEqualIntMinValue(this long value)
+        {
+            return value <= int.MinValue;
+        }
+
+        /// <summary>
+        ///     Indicates the value as decimal is less than int.MinValue value.
+        /// </summary>
+        /// <param name="value">Long value</param>
+        /// <returns>Returns true if value is less than int min value.</returns>
+        public static bool IsLessOrEqualIntMinValue(this long? value)
+        {
+            return !value.HasValue || IsLessOrEqualIntMinValue(value.Value);
         }
 
         /// <summary>

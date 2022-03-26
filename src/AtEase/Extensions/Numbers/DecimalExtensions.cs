@@ -31,5 +31,15 @@
         {
             return value is decimal.MinValue;
         }
+
+        /// <summary>
+        ///     Indicates the value as decimal is less than int.MinValue value.
+        /// </summary>
+        /// <param name="value">decimal value</param>
+        /// <returns>Returns true if value is less than int min value.</returns>
+        public static bool IsLessOrEqualIntMinValue(this decimal value)
+        {
+            return value <= int.MinValue;
+        }
     }
 }
