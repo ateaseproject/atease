@@ -3,6 +3,20 @@
     public static class DecimalExtensions
     {
         /// <summary>
+        ///     Gets a value indicating whether the current <see cref="T:System.Nullable`1" /> object has no a valid value of its
+        ///     underlying type.
+        /// </summary>
+        /// <returns>
+        ///     <see langword="true" /> if the current <see cref="T:System.Nullable`1" /> object has no a value;
+        ///     <see langword="false" /> if the current <see cref="T:System.Nullable`1" /> object has value.
+        /// </returns>
+        public static bool HasNoValue(this decimal? value)
+        {
+            return !value.HasValue;
+        }
+
+
+        /// <summary>
         ///     Convert nullable double to nullable decimal
         /// </summary>
         /// <param name="value"></param>
