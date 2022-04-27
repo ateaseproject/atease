@@ -23,7 +23,17 @@
         /// <returns>Nullable decimal</returns>
         public static decimal? ToNullableDecimal(this double? value)
         {
-            return (decimal?) value;
+            return (decimal?)value;
+        }
+
+        /// <summary>
+        ///     Indicates the value as decimal is 0.
+        /// </summary>
+        /// <param name="value">decimal value</param>
+        /// <returns>Returns true if value is 0 .</returns>
+        public static bool IsZero(this decimal value)
+        {
+            return value is 0;
         }
 
         /// <summary>

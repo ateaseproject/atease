@@ -2,7 +2,7 @@
 {
     public static class DoubleExtensions
     {
- /// <summary>
+        /// <summary>
         ///     Gets a value indicating whether the current <see cref="T:System.Nullable`1" /> object has no a valid value of its
         ///     underlying type.
         /// </summary>
@@ -23,7 +23,17 @@
         /// <returns>Nullable double</returns>
         public static double? ToNullableDouble(this double? value)
         {
-            return (double?) value;
+            return (double?)value;
+        }
+
+        /// <summary>
+        ///     Indicates the value as double is 0 .
+        /// </summary>
+        /// <param name="value">double value</param>
+        /// <returns>Returns true if value is 0 .</returns>
+        public static bool IsZero(this double value)
+        {
+            return value is 0;
         }
 
         /// <summary>

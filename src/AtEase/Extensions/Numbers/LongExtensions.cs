@@ -18,6 +18,15 @@ namespace AtEase.Extensions.Numbers
             return !value.HasValue;
         }
 
+        /// <summary>
+        ///     Indicates the value as long  is 0 .
+        /// </summary>
+        /// <param name="value">Long value</param>
+        /// <returns>Returns true if value is 0 .</returns>
+        public static bool IsZero(this long value)
+        {
+            return value is 0;
+        }
 
         /// <summary>
         ///     Indicates the value as long  is 0 or long.MinValue value.
@@ -106,7 +115,9 @@ namespace AtEase.Extensions.Numbers
         /// <returns>Random long number</returns>
         public static long NextRandom()
         {
+#pragma warning disable SYSLIB0023
             using var provider = new RNGCryptoServiceProvider();
+#pragma warning restore SYSLIB0023
 
             var data = new byte[8];
 

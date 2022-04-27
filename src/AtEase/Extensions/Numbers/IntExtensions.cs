@@ -16,6 +16,16 @@
         }
 
         /// <summary>
+        ///     Indicates the value as int is 0.
+        /// </summary>
+        /// <param name="value">Int value</param>
+        /// <returns>Returns true if value is 0</returns>
+        public static bool IsZero(this int value)
+        {
+            return value is 0;
+        }
+
+        /// <summary>
         ///     Indicates the value as int is 0 or int.MinValue value.
         /// </summary>
         /// <param name="value">Int value</param>

@@ -14,7 +14,7 @@ namespace AtEase.Extensions.DependencyInjection.Test
 
             ServiceProvider serviceProvider = services.BuildServiceProvider();
 
-            ISingleton singleton = serviceProvider.GetService<ISingleton>();
+            ISingleton singleton = serviceProvider.GetService<ISingleton>()!;
 
             singleton.GetName().Should().Be(nameof(NormalSingleton));
 
@@ -23,7 +23,7 @@ namespace AtEase.Extensions.DependencyInjection.Test
 
             serviceProvider = services.BuildServiceProvider();
 
-            singleton = serviceProvider.GetService<ISingleton>();
+            singleton = serviceProvider.GetService<ISingleton>()!;
 
             singleton.GetName().Should().Be(nameof(SingletonWithPublicCtor));
         }
@@ -37,7 +37,7 @@ namespace AtEase.Extensions.DependencyInjection.Test
 
             ServiceProvider serviceProvider = services.BuildServiceProvider();
 
-            ISingleton singleton = serviceProvider.GetService<ISingleton>();
+            ISingleton singleton = serviceProvider.GetService<ISingleton>()!;
 
             singleton.GetName().Should().Be(nameof(NormalSingleton));
 
@@ -46,7 +46,7 @@ namespace AtEase.Extensions.DependencyInjection.Test
 
             serviceProvider = services.BuildServiceProvider();
 
-            singleton = serviceProvider.GetService<ISingleton>();
+            singleton = serviceProvider.GetService<ISingleton>()!;
 
             singleton.GetName().Should().Be(nameof(SingletonWithStaticFactory));
         }

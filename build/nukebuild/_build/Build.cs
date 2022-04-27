@@ -80,8 +80,10 @@ class Build : NukeBuild
                                    .Executes(() =>
                                     {
                                         TestsDirectory.GlobFiles("*/*.Test.csproj")
-                                                      .NotEmpty()
-                                                      .ForEach(x =>
+#pragma warning disable CS0618
+                                            .NotEmpty()
+#pragma warning restore CS0618
+                                            .ForEach(x =>
                                                        {
                                                            DotNetTest(s => s
                                                                           .SetFramework("net5.0")
@@ -112,8 +114,10 @@ class Build : NukeBuild
                               .Executes(() =>
                                {
                                    NugetDirectory.GlobFiles("*.nupkg")
-                                                 .NotEmpty()
-                                                 .ForEach(x =>
+#pragma warning disable CS0618
+                                       .NotEmpty()
+#pragma warning restore CS0618
+                                       .ForEach(x =>
                                                   {
                                                       try
                                                       {
