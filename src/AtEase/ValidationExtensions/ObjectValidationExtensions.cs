@@ -9,7 +9,7 @@ namespace AtEase.ValidationExtensions
         {
             if (obj == null)
             {
-                throw new ArgumentNullException(name, ErrorMessageResource.ArgumentNullError);
+                throw new ArgumentNullException(name);
             }
         }
     }
