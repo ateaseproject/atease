@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Diagnostics;
+using System.Diagnostics.CodeAnalysis;
 
 namespace AtEase.Extensions
 {
@@ -12,7 +14,8 @@ namespace AtEase.Extensions
         /// <returns>
         ///     <c>true</c> if this list is null or empty; otherwise, <c>false</c>.
         /// </returns>
-        public static bool IsNullOrEmpty(this Array items)
+        [DebuggerStepThrough]
+        public static bool IsNullOrEmpty([NotNullWhen(false)] this Array items)
         {
             return items == null || items.Length == 0;
         }
@@ -25,9 +28,10 @@ namespace AtEase.Extensions
         /// <returns>
         ///     <c>true</c> if this list is null or empty; otherwise, <c>false</c>.
         /// </returns>
-        public static bool IsNotNullOrEmpty(this Array items)
+        [DebuggerStepThrough]
+        public static bool IsNotNullOrEmpty([NotNullWhen(true)] this Array items)
         {
-            return items != null && items.Length > 0;
+            return items is {Length: > 0};
         }
     }
 }

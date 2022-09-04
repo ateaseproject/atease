@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
+using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 
 namespace AtEase.Extensions.Collections
@@ -15,12 +17,14 @@ namespace AtEase.Extensions.Collections
         /// <returns>
         ///     <c>true</c> if this list is null or empty; otherwise, <c>false</c>.
         /// </returns>
-        public static bool IsNullOrEmpty<T>(this IEnumerable<T> items)
+        [DebuggerStepThrough]
+        public static bool IsNullOrEmpty<T>([NotNullWhen(false)] this IEnumerable<T> items)
         {
             return items == null || items.NotAny();
         }
 
-        public static bool IsNotNullOrEmpty<T>(this IEnumerable<T> items)
+        [DebuggerStepThrough]
+        public static bool IsNotNullOrEmpty<T>([NotNullWhen(true)] this IEnumerable<T> items)
         {
             return items != null && items.Any();
         }
@@ -28,6 +32,7 @@ namespace AtEase.Extensions.Collections
         /// <summary>
         ///     Determines whether not any element of a sequence satisfies a condition.
         /// </summary>
+        [DebuggerStepThrough]
         public static bool NotAny<TSource>(this IEnumerable<TSource> source)
         {
             return !source.Any();
@@ -36,6 +41,7 @@ namespace AtEase.Extensions.Collections
         /// <summary>
         ///     Determines whether not any element of a sequence satisfies a condition.
         /// </summary>
+        [DebuggerStepThrough]
         public static bool NotAny<TSource>(this IEnumerable<TSource> source, Func<TSource, bool> predicate)
         {
             return !source.Any(predicate);

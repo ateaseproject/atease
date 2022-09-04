@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
+using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 
 namespace AtEase.Extensions.Collections
@@ -15,22 +17,26 @@ namespace AtEase.Extensions.Collections
         /// <returns>
         ///     <c>true</c> if this list is null or empty; otherwise, <c>false</c>.
         /// </returns>
-        public static bool IsNullOrEmpty<T>(this IList<T> items)
+        [DebuggerStepThrough]
+        public static bool IsNullOrEmpty<T>([NotNullWhen(false)]this IList<T> items)
         {
             return items == null || !items.Any();
         }
 
 
-        public static bool IsNotNullOrEmpty<T>(this IList<T> items)
+        [DebuggerStepThrough]
+        public static bool IsNotNullOrEmpty<T>([NotNullWhen(true)]this IList<T> items)
         {
             return items != null && items.Any();
         }
 
+        [DebuggerStepThrough]
         public static bool NotAny<TSource>(this IList<TSource> source)
         {
             return !source.Any();
         }
 
+        [DebuggerStepThrough]
         public static bool NotAny<TSource>(this IList<TSource> source, Func<TSource, bool> predicate)
         {
             return !source.Any(predicate);

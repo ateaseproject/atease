@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Diagnostics;
+using System.Diagnostics.CodeAnalysis;
 using System.Text;
 using System.Text.RegularExpressions;
 
@@ -18,22 +19,22 @@ namespace AtEase.Extensions
             return new string(mobileArray);
         }
         [DebuggerStepThrough]
-        public static bool IsNullOrEmpty(this string value)
+        public static bool IsNullOrEmpty([NotNullWhen(false)]this string value)
         {
             return string.IsNullOrEmpty(value);
         }
         [DebuggerStepThrough]
-        public static bool IsNotNullOrEmpty(this string value)
+        public static bool IsNotNullOrEmpty([NotNullWhen(true)]this string value)
         {
             return !value.IsNullOrEmpty();
         }
         [DebuggerStepThrough]
-        public static bool IsNullOrEmptyOrWhiteSpace(this string value)
+        public static bool IsNullOrEmptyOrWhiteSpace([NotNullWhen(false)]this string value)
         {
             return string.IsNullOrWhiteSpace(value);
         }
         [DebuggerStepThrough]
-        public static bool IsNotNullOrEmptyOrWhiteSpace(this string value)
+        public static bool IsNotNullOrEmptyOrWhiteSpace([NotNullWhen(true)]this string value)
         {
             return !value.IsNullOrEmptyOrWhiteSpace();
         }

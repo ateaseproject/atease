@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics;
 
 namespace AtEase.Extensions
 {
@@ -7,6 +8,7 @@ namespace AtEase.Extensions
         /// <summary>
         ///     Generate a new <see cref="Guid" />
         /// </summary>
+        [DebuggerStepThrough]
         public static Guid NewSequentialGuid()
         {
             return GuidGeneratorEfExtensions.NewEfSequentialGuid();
@@ -15,6 +17,7 @@ namespace AtEase.Extensions
         /// <summary>
         ///     Change guid as a new sequential guid  <see cref="Guid" />
         /// </summary>
+        [DebuggerStepThrough]
         public static Guid AsSequentialGuid(this Guid newGuid)
         {
             return newGuid.AsEfSequentialGuid();

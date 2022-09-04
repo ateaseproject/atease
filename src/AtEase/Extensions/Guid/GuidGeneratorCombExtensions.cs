@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics;
 
 namespace AtEase.Extensions
 {
@@ -24,6 +25,7 @@ namespace AtEase.Extensions
         /// <summary>
         ///     Generate a new <see cref="Guid" /> using the comb algorithm.
         /// </summary>
+        [DebuggerStepThrough]
         public static Guid AsCombSequentialGuid(this Guid newGuid)
         {
             byte[] guidArray = newGuid.ToByteArray();
@@ -55,6 +57,7 @@ namespace AtEase.Extensions
         /// <summary>
         ///     Generate a new <see cref="Guid" /> using the comb algorithm.
         /// </summary>
+        [DebuggerStepThrough]
         private static Guid GenerateComb()
         {
             byte[] guidArray = Guid.NewGuid().ToByteArray();

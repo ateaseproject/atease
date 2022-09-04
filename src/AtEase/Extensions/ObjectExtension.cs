@@ -1,14 +1,19 @@
-﻿namespace AtEase.Extensions
+﻿using System.Diagnostics;
+using System.Diagnostics.CodeAnalysis;
+
+namespace AtEase.Extensions
 {
     public static class ObjectExtension
     {
-        public static bool IsNull(this object value)
+        [DebuggerStepThrough]
+        public static bool IsNull([NotNullWhen(false)] this object value)
         {
             return value == null;
         }
 
 
-        public static bool IsNotNull(this object value)
+        [DebuggerStepThrough]
+        public static bool IsNotNull([NotNullWhen(true)] this object value)
         {
             return value != null;
         }

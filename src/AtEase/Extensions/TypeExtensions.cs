@@ -44,5 +44,89 @@ namespace AtEase.Extensions
         {
             return type.GetTypeInfo().IsValueType;
         }
+
+
+
+
+
+        internal static readonly Type[] PredefinedTypes = new Type[20]
+        {
+            typeof(object),
+            typeof(bool),
+            typeof(char),
+            typeof(string),
+            typeof(sbyte),
+            typeof(byte),
+            typeof(short),
+            typeof(ushort),
+            typeof(int),
+            typeof(uint),
+            typeof(long),
+            typeof(ulong),
+            typeof(float),
+            typeof(double),
+            typeof(decimal),
+            typeof(DateTime),
+            typeof(TimeSpan),
+            typeof(Guid),
+            typeof(Math),
+            typeof(Convert)
+        };
+
+        /// <summary>
+        /// Check type is C# predefined type;
+        /// </summary>
+        [DebuggerStepThrough]
+        public static bool IsPredefinedType(this Type type)
+        {
+            foreach (var predefinedType in PredefinedTypes)
+            {
+                if (predefinedType == type) return true;
+            }
+
+            return false;
+        }
+
+        /// <summary>
+        /// Check type is Interface
+        /// </summary>
+        [DebuggerStepThrough]
+        internal static bool IsInterface(this Type type)
+        {
+            return type.GetTypeInfo().IsInterface;
+        }
+
+        /// <summary>
+        /// Check type is nullable
+        /// </summary>
+        [DebuggerStepThrough]
+        internal static bool IsNullableType(this Type type)
+        {
+            return type.IsGenericType() && type.GetGenericTypeDefinition() == (object)typeof(Nullable<>);
+        }
+
+        /// <summary>
+        /// Check type is not nullable
+        /// </summary>
+        [DebuggerStepThrough]
+        internal static bool IsNotNullableType(this Type type)
+        {
+            return !IsNullableType(type);
+        }
+
+        /// <summary>
+        /// Get type default value
+        /// </summary>
+        [DebuggerStepThrough]
+
+        public static object GetDefaultValue(this Type type)
+        {
+            return type.IsValueType() ? Activator.CreateInstance(type) : null;
+        }
+
+
+
+
+
     }
 }

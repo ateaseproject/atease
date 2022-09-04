@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics;
 using System.Threading;
 
 namespace AtEase.Extensions
@@ -14,6 +15,7 @@ namespace AtEase.Extensions
         /// <summary>
         ///     Generate a new <see cref="Guid" /> using the Ef structure!
         /// </summary>
+        [DebuggerStepThrough]
         public static Guid NewEfSequentialGuid()
         {
             return Next();
@@ -23,6 +25,7 @@ namespace AtEase.Extensions
         /// <summary>
         ///     Generate a new <see cref="Guid" /> using the Ef structure!
         /// </summary>
+        [DebuggerStepThrough]
         private static Guid Next()
         {
             var guidBytes = Guid.NewGuid().ToByteArray();
@@ -49,6 +52,7 @@ namespace AtEase.Extensions
         /// <summary>
         ///     Generate a new <see cref="Guid" /> using the Ef structure!
         /// </summary>
+        [DebuggerStepThrough]
         public static Guid AsEfSequentialGuid(this Guid newGuid)
         {
             var guidBytes = newGuid.ToByteArray();

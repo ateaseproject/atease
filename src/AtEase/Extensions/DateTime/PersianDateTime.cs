@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics;
 using System.Globalization;
 
 namespace AtEase.Extensions
@@ -36,6 +37,7 @@ namespace AtEase.Extensions
 
         public double Milliseconds => Calendar.GetMilliseconds(DateTime);
 
+        [DebuggerStepThrough]
         public static PersianDateTime Parse(string value)
         {
             if (string.IsNullOrEmpty(value?.Trim()))
@@ -100,11 +102,13 @@ namespace AtEase.Extensions
                 millisecond));
         }
 
+        [DebuggerStepThrough]
         public override string ToString()
         {
             return ToString("yyyy/MM/dd HH:mm");
         }
 
+        [DebuggerStepThrough]
         public string ToString(string format)
         {
             if (string.IsNullOrEmpty(format))

@@ -1,14 +1,13 @@
 ﻿using System;
+using System.Diagnostics.CodeAnalysis;
+
 namespace AtEase.Extensions
 {
-#if (NETSTANDARD2_1_OR_GREATER || NET5_0_OR_GREATER)
     public static class SpanExtensions
     {
-        public static bool IsNullOrEmptyOrWhitespace(this ReadOnlySpan<char> value)
+        public static bool IsNullOrEmptyOrWhitespace([NotNullWhen(false)] this ReadOnlySpan<char> value)
         {
-            return (value == null) || value.IsEmpty || value.IsWhiteSpace();
+            return value == null || value.IsEmpty || value.IsWhiteSpace();
         }
     }
-
-#endif
 }

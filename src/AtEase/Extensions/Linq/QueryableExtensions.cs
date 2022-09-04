@@ -1,16 +1,19 @@
-﻿using System.Linq;
+﻿using System.Diagnostics;
+using System.Linq;
 using System.Linq.Expressions;
 
 namespace AtEase.Extensions.Linq
 {
     public static class QueryableExtensions
     {
+        [DebuggerStepThrough]
         public static IQueryable<T> OrderBy<T>(this IQueryable<T> source, string propertyName)
 
         {
             return (IQueryable<T>) OrderBy((IQueryable) source, propertyName);
         }
 
+        [DebuggerStepThrough]
         public static IQueryable OrderBy(this IQueryable source, string propertyName)
 
         {
@@ -25,12 +28,14 @@ namespace AtEase.Extensions.Linq
                 ));
         }
 
+        [DebuggerStepThrough]
         public static IQueryable<T> OrderDescendingBy<T>(this IQueryable<T> source, string propertyName)
 
         {
             return (IQueryable<T>) OrderDescendingBy((IQueryable) source, propertyName);
         }
 
+        [DebuggerStepThrough]
         public static IQueryable OrderDescendingBy(this IQueryable source, string propertyName)
 
         {
